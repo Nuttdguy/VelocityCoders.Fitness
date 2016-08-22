@@ -1,0 +1,117 @@
+﻿body {
+}
+
+.datagrid {
+    text-align: center;
+    font: normal 12px/150% Arial, Helvetica, san-serif;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #006699;
+    /*width: 50%;*/
+}
+
+.datagrid table
+{
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+.datagrid table td, 
+.datagrid table th {
+    padding: 2px 10px;
+}
+
+.datagrid table thead th {
+    text-align: center;
+    background-color: #006699;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.datagrid table tbody td {
+    font-size: 12px;
+    border-bottom: 1px solid #006699;
+    font-weight: normal;
+}
+
+.datagrid table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.form {
+    text-align: center;
+    font: normal 12px/150% Arial, Helvetica, san-serif;
+    background: #fff;
+    overflow: hidden;
+    width: 50%;
+}
+
+.datagrid {
+    border: 1px solid #006699;
+}
+
+.datagrid table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+.datagrid caption {
+    font-weight: bold;
+    font-size: 2em;
+    padding: 10px 10px;
+}
+
+.btn {
+    background-color: #006699;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+/*
+#table1 {
+    border: 1px solid green;
+    border-collapse: collapse;
+}
+
+#tr1 {
+    border: 1px solid green;
+}
+
+#tr1td1,
+#tr1td2 {
+    border: 1px solid red;
+}
+
+#tr2td1,
+#tr2td2 {
+    border: 1px solid orange;
+}
+
+.greenBorder {
+    border: 1px solid darkgreen;
+}
+
+.blueBorder {
+    border: 1px solid lightblue;
+}
+
+.redBorder {
+    border: 1px solid lightpink;
+}
+
+.orangeBorder {
+    border: 1px solid darkorange;
+}
+
+
+table, tr { border: 1px solid darkgreen; border-collapse: collapse; }
+td { border: 1px solid red; }
+td.orangeBorder { border: 1px solid orange; }
+
+    
+*/

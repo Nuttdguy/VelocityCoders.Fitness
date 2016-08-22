@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
 
@@ -9,16 +10,24 @@ namespace VelocityCoders.FitnessPratice.WebForm
         protected void Page_Load(object sender, EventArgs e)
         {
             this.BindPersonList();
-            // label0.Text = AddInstructor();
         }
 
         private void BindPersonList()
         {
-            PersonCollection personList = new PersonCollection();
-            personList = PersonDAL.GetCollection();
+            //PersonCollection personList = new PersonCollection();
+            //personList = PersonDAL.GetCollection();
 
-            repeaterText.DataSource = personList;
-            repeaterText.DataBind();
+            PersonCollection personList = PersonDAL.GetCollection();
+
+            if (personList != null)
+            {
+                repeaterText.DataSource = personList;
+                repeaterText.DataBind();
+            }
+            else
+            {
+                lblMessage.Text = "No available persons to display.";
+            }
         }
 
         #region FOR DEMONSTRATION OF INTERFACE INHERITANCE

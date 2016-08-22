@@ -16,6 +16,7 @@
     <div>
         <h1>Person Collection</h1>
         <a href="../Index.aspx">Home</a>
+        <asp:Label runat="server" ID="lblMessage" />
         <table>
             <asp:Repeater runat="server" ID="repeaterText">
                 <HeaderTemplate>
