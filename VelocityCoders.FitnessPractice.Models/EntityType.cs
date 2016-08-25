@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VelocityCoders.FitnessPractice.Models
 {
-    public class EntityType : BaseCollection<EntityType>
+    public class EntityType
     {
         public int EntityTypeId { get; set; }
         public int EntityId { get; set; }

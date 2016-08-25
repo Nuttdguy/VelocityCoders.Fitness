@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VelocityCoders.FitnessPractice.Models
 {
-    public class Email : BaseCollection<Email>
+    public class Email
     {
         public int EmailId { get; set; }
         public int EntityTypeId { get; set; }

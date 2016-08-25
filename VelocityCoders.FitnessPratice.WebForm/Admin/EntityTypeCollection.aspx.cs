@@ -21,7 +21,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
         private void BindEntityType()
         {
-            EntityType bindObject = new EntityType();
+            EntityTypeCollectionList bindObject = new EntityTypeCollectionList();
             bindObject = EntityTypeDAL.GetCollection();
 
             repeaterText.DataSource = bindObject;

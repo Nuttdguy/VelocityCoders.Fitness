@@ -38,9 +38,9 @@ namespace VelocityCoders.FitnessPractice.DAL
         #endregion
 
         #region GET_COLLECTION
-        public static Email GetCollection()
+        public static EmailCollectionList GetCollection()
         {
-            Email tmpList = null;
+            EmailCollectionList tmpList = null;
             // variable instantiation is required for scope/access o
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -54,7 +54,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                     {
                         if(myReader.HasRows)
                         {
-                            tmpList = new Email();
+                            tmpList = new EmailCollectionList();
                             while (myReader.Read())
                             {
                                 tmpList.Add(FillDataRecord(myReader));

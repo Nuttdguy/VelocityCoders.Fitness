@@ -14,9 +14,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
         private void BindFitnessClass()
         {
-            FitnessClass fitClassList = new FitnessClass();
+            FitnessClassCollectionList fitClassList = new FitnessClassCollectionList();
             //fitClassList = FitnessClassDAL;
-            fitClassList = VelocityCoders.FitnessPractice.DAL.FitnessClassDAL.GetCollection();
+            fitClassList = FitnessClassDAL.GetCollection();
 
             repeaterText.DataSource = fitClassList;
             repeaterText.DataBind();

@@ -3,7 +3,7 @@
 
 namespace VelocityCoders.FitnessPractice.Models
 {
-    public class FitnessClass : BaseCollection<FitnessClass>
+    public class FitnessClass
     {
         public int FitnessClassId { get; set; }
         public string FitnessClassName { get; set; }

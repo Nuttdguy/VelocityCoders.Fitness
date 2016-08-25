@@ -7,32 +7,32 @@ namespace VelocityCoders.FitnessPractice.Models
     //=============================================================================\\
     //   CLASSES THAT REQUIRE BASECOLLECTION AND ITS COLLECTION CLASS/INTERFACES   ||
     //=============================================================================//
-    public class PersonCollection : BaseCollection<Person>
+    public class PersonCollectionList : BaseCollection<Person>
     {
 
     }
 
-    public class InstructorCollection : BaseCollection<Instructor>
+    public class InstructorCollectionList : BaseCollection<Instructor>
     {
 
     }
 
-    public class FitnessClassCollection : BaseCollection<FitnessClass>
+    public class FitnessClassCollectionList : BaseCollection<FitnessClass>
     {
 
     }
 
-    public class EntityTypeCollection : BaseCollection<EntityType>
+    public class EntityTypeCollectionList : BaseCollection<EntityType>
     {
 
     }
 
-    public class EntityCollection : BaseCollection<Entity>
+    public class EntityCollectionList : BaseCollection<Entity>
     {
 
     }
 
-    public class EmailCollection : BaseCollection<Email>
+    public class EmailCollectionList : BaseCollection<Email>
     {
 
     }

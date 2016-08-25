@@ -17,7 +17,7 @@ namespace VelocityCoders.FitnessPratice.WebForm
             //PersonCollection personList = new PersonCollection();
             //personList = PersonDAL.GetCollection();
 
-            PersonCollection personList = PersonDAL.GetCollection();
+            PersonCollectionList personList = PersonDAL.GetCollection();
 
             if (personList != null)
             {

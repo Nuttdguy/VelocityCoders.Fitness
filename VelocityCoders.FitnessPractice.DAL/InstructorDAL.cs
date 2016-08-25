@@ -36,9 +36,9 @@ namespace VelocityCoders.FitnessPractice.DAL
 
 
         #region GET_COLLECTION
-        public static Instructor GetCollection()
+        public static InstructorCollectionList GetCollection()
         {
-            Instructor tmpList = null;
+            InstructorCollectionList tmpList = null;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -52,7 +52,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                     {
                         if (myReader.HasRows)
                         {
-                            tmpList = new Instructor();
+                            tmpList = new InstructorCollectionList();
                             while (myReader.Read())
                             {
                                 tmpList.Add(FillDataRecord(myReader));

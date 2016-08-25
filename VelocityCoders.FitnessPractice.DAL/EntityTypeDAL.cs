@@ -43,9 +43,9 @@ namespace VelocityCoders.FitnessPractice.DAL
         #endregion
 
         #region GET_COLLECTION
-        public static EntityType GetCollection()
+        public static EntityTypeCollectionList GetCollection()
         {
-            EntityType tmpList = null;
+            EntityTypeCollectionList tmpList = null;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -59,7 +59,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                     {
                         if(myReader.HasRows)
                         {
-                            tmpList = new EntityType();
+                            tmpList = new EntityTypeCollectionList();
                             while (myReader.Read())
                             {
                                 tmpList.Add(FillDataRecord(myReader));

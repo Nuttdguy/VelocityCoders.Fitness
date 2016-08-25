@@ -20,7 +20,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         #region BIND GET_COLLECTION
         private void BindInstructorCollection()
         {
-            Instructor instructorList = new Instructor();
+            InstructorCollectionList instructorList = new InstructorCollectionList();
             instructorList = InstructorDAL.GetCollection();
 
             repeaterText.DataSource = instructorList;

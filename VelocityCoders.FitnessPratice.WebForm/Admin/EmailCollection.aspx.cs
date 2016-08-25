@@ -14,7 +14,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
         public void BindEmailData()
         {
-            Email myEmailList = new Email();
+            EmailCollectionList myEmailList = new EmailCollectionList();
             myEmailList = EmailDAL.GetCollection();
 
             repeaterText.DataSource = myEmailList;
