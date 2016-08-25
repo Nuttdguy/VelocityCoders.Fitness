@@ -40,7 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityManager.cs" />
+    <Compile Include="EntityTypeManager.cs" />
+    <Compile Include="InstructorManager.cs" />
+    <Compile Include="PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VelocityCoders.FitnessPractice.Models\VelocityCoders.FitnessPractice.Models.csproj">
+      <Project>{50db5f11-7769-4a57-ae79-f84d7f3bd64c}</Project>
+      <Name>VelocityCoders.FitnessPractice.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
