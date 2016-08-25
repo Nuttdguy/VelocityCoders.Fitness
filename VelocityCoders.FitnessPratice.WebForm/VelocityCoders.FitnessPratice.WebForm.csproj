@@ -72,10 +72,17 @@
     <Content Include="Admin\EntityTypeDetail.aspx" />
     <Content Include="Admin\FitnessClassCollection.aspx" />
     <Content Include="Admin\FitnessClassDetail.aspx" />
-    <Content Include="Admin\InstructorCollection.aspx" />
-    <Content Include="Admin\InstructorDetail.aspx" />
+    <Content Include="Admin\Instructors\ContactInfo.aspx" />
+    <Content Include="Admin\Instructors\InstructorCollection.aspx" />
+    <Content Include="Admin\Instructors\InstructorDetail.aspx" />
+    <Content Include="Admin\Instructors\InstructorForm.aspx" />
+    <Content Include="App_Themes\Main\FormControls.css" />
+    <Content Include="App_Themes\Main\Images\background-banner.jpg" />
+    <Content Include="App_Themes\Main\Images\header-logo.png" />
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />
+    <Content Include="App_Themes\Main\Main.css" />
+    <Content Include="MasterPages\Site2Column.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,6 +93,7 @@
   <ItemGroup>
     <Content Include="Admin\PersonCollection.aspx" />
     <Content Include="Admin\PersonDetail.aspx" />
+    <Content Include="UserControls\InstructorNavigationControl.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -133,19 +141,33 @@
     <Compile Include="Admin\FitnessClassDetail.aspx.designer.cs">
       <DependentUpon>FitnessClassDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\InstructorCollection.aspx.cs">
+    <Compile Include="Admin\Instructors\ContactInfo.aspx.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Instructors\ContactInfo.aspx.designer.cs">
+      <DependentUpon>ContactInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorCollection.aspx.cs">
       <DependentUpon>InstructorCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InstructorCollection.aspx.designer.cs">
+    <Compile Include="Admin\Instructors\InstructorCollection.aspx.designer.cs">
       <DependentUpon>InstructorCollection.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\InstructorDetail.aspx.cs">
+    <Compile Include="Admin\Instructors\InstructorDetail.aspx.cs">
       <DependentUpon>InstructorDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\InstructorDetail.aspx.designer.cs">
+    <Compile Include="Admin\Instructors\InstructorDetail.aspx.designer.cs">
       <DependentUpon>InstructorDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorForm.aspx.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorForm.aspx.designer.cs">
+      <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\PersonCollection.aspx.cs">
       <DependentUpon>PersonCollection.aspx</DependentUpon>
@@ -168,7 +190,21 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site2Column.Master.designer.cs">
+      <DependentUpon>Site2Column.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\InstructorNavigationControl.ascx.cs">
+      <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\InstructorNavigationControl.ascx.designer.cs">
+      <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VelocityCoders.FitnessPractice.DAL\VelocityCoders.FitnessPractice.DAL.csproj">
@@ -180,7 +216,9 @@
       <Name>VelocityCoders.FitnessPractice.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Admin\Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

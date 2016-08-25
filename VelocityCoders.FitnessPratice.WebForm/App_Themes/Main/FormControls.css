@@ -1,0 +1,33 @@
+﻿select,
+input,
+textarea {
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  color: #4d4d4d;
+  font-size: 12px;
+  padding: 3px;
+
+  box-shadow: inset rgba(0,0,0,0.1) 0 0 3px 0;
+  border-radius: 4px;
+
+}
+
+input[type="submit"] {
+  color: #1c1c1c;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  padding: 5px;
+  background: #ccc;
+
+  border: 1px solid #ccc;
+  border-radius: 2px;
+
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+
+  opacity: .7;
+  cursor: pointer;
+}
+
+

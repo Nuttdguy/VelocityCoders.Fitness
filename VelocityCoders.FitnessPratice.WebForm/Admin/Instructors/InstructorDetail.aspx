@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorDetail.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.InstructorDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorDetail.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.Instructors.InstructorDetail" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <h1>Instructor Detail</h1>
-    <a href="InstructorCollection.aspx">Back</a><a href="../index.aspx">Home</a>
+    <a href="InstructorCollection.aspx">Back</a><a href="../../Index.aspx">Home</a>
     <div>
         <b>Instructor ID:</b><asp:Label runat="server" ID="lblInstructorId" /><br />
         <b>Person ID:</b><asp:Label runat="server" ID="lblPersonId" /><br />

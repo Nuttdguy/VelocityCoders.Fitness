@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorCollection.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.InstructorCollection" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorCollection.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.Instructors.InstructorCollection" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
     <h1>Instructor Collection</h1>
-    <a href="../Index.aspx">Back</a><br /><br />
+    <a href="../../Index.aspx">Back</a><br /><br />
     <div>
         <table>
             <asp:Repeater runat="server" ID="repeaterText">

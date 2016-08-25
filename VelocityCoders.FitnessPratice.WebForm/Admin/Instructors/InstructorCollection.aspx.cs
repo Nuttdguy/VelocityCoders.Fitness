@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace VelocityCoders.FitnessPratice.WebForm.Admin
+namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 {
     public partial class InstructorCollection : System.Web.UI.Page
     {

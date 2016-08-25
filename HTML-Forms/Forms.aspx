@@ -10,7 +10,8 @@
     <div class="form">
         <form id="form1" runat="server" action="Thanks.aspx" method="get" >
             <div class="datagrid" >
-            <table id="table1">
+            
+              <table id="table1">
                 <caption>Administrator Input</caption>
                 <thead>
                     <tr>
@@ -74,11 +75,11 @@
                         <input type="checkbox" name="chkTerm" value="term" />
                     </td>
                 </tr>
-            </tbody>
-            </table>
-        </div>
-       </form>
-    <center><input  class="btn" type="submit" value="Submit Form"/></center>
+                </tbody>
+              </table>
+              </div>
+            </form>
+        <center><input  class="btn" type="submit" value="Submit Form"/></center>
     </div>
 </body>
 </html>

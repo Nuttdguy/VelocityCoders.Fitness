@@ -3,7 +3,7 @@ using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
 
 
-namespace VelocityCoders.FitnessPratice.WebForm.Admin
+namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 {
     public partial class InstructorDetail : System.Web.UI.Page
     {

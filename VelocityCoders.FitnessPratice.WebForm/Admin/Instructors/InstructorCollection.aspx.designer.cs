@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VelocityCoders.FitnessPratice.WebForm.Admin {
+namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors {
     
     
     public partial class InstructorCollection {

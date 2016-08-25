@@ -16,9 +16,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h1>Content Management</h1>
+        <h1>Content Management</h1><br />
         <a href="Admin/PersonCollection.aspx">View Person List</a><br />
-        <a href="Admin/InstructorCollection.aspx">View Instructor List</a><br />
+        <a href="Admin/Instructors/InstructorCollection.aspx">View Instructor List</a><br />
         <a href="Admin/FitnessClassCollection.aspx">View Fitness Class List</a><br />
         <a href="Admin/EntityTypeCollection.aspx">View Entity Types</a><br />
         <a href="Admin/EmailCollection.aspx">View Email List</a><br />

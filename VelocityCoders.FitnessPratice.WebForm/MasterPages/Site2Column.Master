@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2Column.master.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.MasterPages.Site2Column" %>
+
+<%--VALIDATED AS WORKING AND IS DISPLAYING CORRECTLY--%>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+      <div>
+        <div id="Header">
+          <img src="../../App_Themes/Main/Images/header-logo.png" />
+        </div>
+
+        <div id="Subheader" >
+          <div class="Banner">
+            <h1 class="BannerText">Fitness Schedule Administration</h1>
+            <p>Tool to manage your fitness schedule application.</p>
+          </div>
+        </div>
+
+        <div id="Container"> <!-- MAIN CONTAINER -->
+          <div id="NavigationContainer">
+            <div id="NavigationContainerContent"> Left Navigation Placeholder </div>
+          </div>
+
+          <div id="BodyContainer" >
+            <div id="BodyContainerContent" >
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+              </div>
+            </div>
+          </div>
+
+        <div id="Footer">
+          <div>&copy; 2016 - Velocity Coders </div>
+        </div>
+
+      </div>
+    </form>
+
+</body>
+</html>

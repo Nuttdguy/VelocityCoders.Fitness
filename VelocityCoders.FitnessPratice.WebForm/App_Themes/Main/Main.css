@@ -1,0 +1,172 @@
+﻿html {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Verdana', 'Arial', sans-serif;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+
+body {
+    width: 980px;
+    background-color: #f5f5f5;
+
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 21px;
+}
+
+#Header,
+#Footer,
+#Subheader {
+    width: 100%;
+}
+
+#Header {
+    height: 65px;
+    background-color: #fff;
+}
+
+#Subheader {
+    background-color: #050506;
+    background-image: url(Images/background-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    height: 350px;
+}
+
+#Footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+
+    color: #ACB2B8;
+    border-top: 1px solid #ACB2B8;
+
+}
+
+#Container {
+    background-color: transparent;
+    position: fixed;
+    top: 280px;
+    width: 978px;
+}
+
+#NavigationContainer {
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+#NavigationContainerContent {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+#BodyContainer {
+    margin-left: 210px;
+    margin-right: 20px;
+}
+
+#InstructorContainer {
+  padding: 20px;
+  background-color: #fff;
+  min-height: 200px;
+}
+
+#InstructorContainer table {
+  width: 100%;
+}
+
+#InstructorContainer table label {
+  float: right;
+  padding-right: 10px;
+}
+
+.Banner {
+    text-align: center;
+    width: 100%;
+    max-width: 980px;
+    padding-top: 70px;
+}
+
+.BannerText {
+    font-weight: 300;
+}
+
+.BannerText,
+.Banner p {
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    color: #fff;
+}
+
+.PageMessage,
+.BorderRadius,
+.BorderRadiusAll,
+.BorderRadiusBottom,
+.BorderRadiusTop {
+    border: 1px solid #ccc;
+    box-shadow: rgba(0,0,0,.1) 0 0 2px 0;
+}
+
+.BorderRadiusAll {
+    border-radius: 4px;
+}
+
+.BorderRadiusBottom {
+    border-radius: 0px 0px 4px 4px;
+}
+
+#Footer,
+.BorderRadiusTop {
+    border-radius: 4px 4px 0 0;
+}
+
+
+.ContainerBar {
+    background: #f4f3f1;
+    border-bottom: 1px solid #e6e3e1;
+    border-top: 1px solid #e6e3e1;
+    line-height: 16px;
+    margin: 15px -20px 0;
+    overflow: hidden;
+    padding: 12px 20px;
+}
+
+/* VERIFIED AS CORRECT AS OF DOCUMENT B-11 */
+/* ADDED AFTER B-11 */
+
+#ContainerSubHeader {
+  background-color: #808080;
+  min-height: 40px;
+}
+
+.SubheaderNavigation ul {
+  margin: 0;
+  text-align: center;
+}
+
+.SubheaderNavigation li {
+  display: inline;
+  padding: 8px;
+}
+
+.SubheaderNavigation a {
+  letter-spacing: .05em;
+  color: #fff;
+  line-height: 40px;
+}
+
+.SmallPadding {
+  padding: 4px;
+}
+
+
