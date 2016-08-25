@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VelocityCoders.FitnessPractice.Models
 {
-    public class Person
+    public class Person 
     {
         public int personId { get; set; }
         public string firstName { get; set; }

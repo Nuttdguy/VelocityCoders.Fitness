@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML-Forms", "HTML-Forms\HTML-Forms.csproj", "{4A232590-E892-4BE2-B102-17E3A541432E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPractice.BLL", "VelocityCoders.FitnessPractice.BLL\VelocityCoders.FitnessPractice.BLL.csproj", "{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4A232590-E892-4BE2-B102-17E3A541432E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A232590-E892-4BE2-B102-17E3A541432E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A232590-E892-4BE2-B102-17E3A541432E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
