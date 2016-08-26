@@ -9,11 +9,11 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region RETRIEVE SINGLE ITEM
-        //public static EntityType GetItem(int EntityTypeId)
-        //{
-        //    //== Call DAL to retrieve item by Id
-        //    return new EntityType { };
-        //}
+        public static EntityType GetItem(int EntityTypeId)
+        {
+            //== Call DAL to retrieve item by Id
+            return new EntityType { };
+        }
         #endregion
 
         #region RETRIEVE COLLECTION BY ENTITY TYPE
@@ -27,11 +27,11 @@ namespace VelocityCoders.FitnessPractice.BLL
 
 
         #region GET_COLLECTION W/OUT PARAMETER
-        //public static EntityTypeCollectionList GetCollection()
-        //{
-        //    //== Call DAL to retrieve Collection
-        //    return new EntityTypeCollectionList { };
-        //}
+        public static EntityTypeCollectionList GetCollection()
+        {
+            //== Call DAL to retrieve Collection
+            return new EntityTypeCollectionList { };
+        }
 
         #endregion
 

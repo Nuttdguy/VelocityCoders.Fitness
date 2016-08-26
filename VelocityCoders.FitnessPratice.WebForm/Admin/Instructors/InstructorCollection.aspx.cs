@@ -1,6 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
+// using VelocityCoders.FitnessPractice.DAL;
 using VelocityCoders.FitnessPractice.BLL;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +21,8 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         #region BIND GET_COLLECTION
         private void BindInstructorCollection()
         {
-            InstructorCollectionList instructorList = new InstructorCollectionList();
-            instructorList = InstructorDAL.GetCollection();
+            InstructorCollectionList instructorList = InstructorManager.GetInstructorCollection();
+            //instructorList = InstructorDAL.GetCollection();
 
             repeaterText.DataSource = instructorList;
             repeaterText.DataBind();
