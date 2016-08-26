@@ -110,6 +110,8 @@ namespace VelocityCoders.FitnessPractice.DAL
                 myPersonObject.displayFirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayFirstName"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Gender")))
                 myPersonObject.gender = myDataRecord.GetString(myDataRecord.GetOrdinal("Gender"));
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("BirthDate")))
+                myPersonObject.BirthDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("BirthDate"));
 
             //== RETURNS THE PERSON OBJECT TO THE CALLING METHOD
             return myPersonObject;

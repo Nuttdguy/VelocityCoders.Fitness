@@ -10,7 +10,7 @@
 namespace VelocityCoders.FitnessPratice.WebForm {
     
     
-    public partial class FitnessPractice {
+    public partial class PersonCollection {
         
         /// <summary>
         /// form1 control.

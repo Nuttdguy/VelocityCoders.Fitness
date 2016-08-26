@@ -9,9 +9,10 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region RETRIEVE SINGLE ITEM
-        public static InstructorCollectionList GetInstructorItem(int instructorId)
+        public static Instructor GetInstructorItem(int instructorId)
         {
-            return new InstructorCollectionList { };
+            Instructor myInstructor = InstructorDAL.GetItem(instructorId);
+            return myInstructor;
         }
         #endregion
 

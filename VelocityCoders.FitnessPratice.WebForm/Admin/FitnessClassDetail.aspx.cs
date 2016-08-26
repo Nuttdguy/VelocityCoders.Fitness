@@ -1,6 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin
@@ -18,7 +18,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
             if (fitnessClassId > 0 )
             {
-                FitnessClass fitnessClassLookup = FitnessClassDAL.GetItem(fitnessClassId);
+                FitnessClass fitnessClassLookup = FitnessClassManager.GetFitnessClassItem(fitnessClassId);
                 if (fitnessClassLookup != null)
                 {
                     lblFitnessClassId.Text = fitnessClassLookup.FitnessClassId.ToString();

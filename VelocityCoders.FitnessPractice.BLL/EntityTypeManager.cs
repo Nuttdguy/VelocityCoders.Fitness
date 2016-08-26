@@ -9,10 +9,10 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region RETRIEVE SINGLE ITEM
-        public static EntityType GetItem(int EntityTypeId)
+        public static EntityType GetItem(int entityTypeId)
         {
-            //== Call DAL to retrieve item by Id
-            return new EntityType { };
+            EntityType myEntityType = EntityTypeDAL.GetItem(entityTypeId);
+            return myEntityType;
         }
         #endregion
 

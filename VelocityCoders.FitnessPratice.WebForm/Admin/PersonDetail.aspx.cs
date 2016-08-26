@@ -1,6 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 
 namespace VelocityCoders.FitnessPratice.WebForm
 {
@@ -17,7 +17,7 @@ namespace VelocityCoders.FitnessPratice.WebForm
 
             if (personId > 0)
             {
-                Person personLookup = PersonDAL.GetItem(personId);
+                Person personLookup = PersonManager.GetPersonItem(personId);
 
                 if (personLookup != null)
                 {
@@ -25,6 +25,7 @@ namespace VelocityCoders.FitnessPratice.WebForm
                     lblFirstName.Text = personLookup.firstName;
                     lblLastName.Text = personLookup.lastName;
                     lblDisplayName.Text = personLookup.displayFirstName;
+                    lblBirthDate.Text = personLookup.BirthDate.ToLongTimeString();
                     lblGender.Text = personLookup.gender;
                 }
                 else

@@ -14,5 +14,6 @@ namespace VelocityCoders.FitnessPractice.Models
         public string displayFirstName { get; set; }
         public string gender { get; set; }
         public string description { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

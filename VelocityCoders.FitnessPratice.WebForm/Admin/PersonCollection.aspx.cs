@@ -5,7 +5,7 @@ using VelocityCoders.FitnessPractice.DAL;
 
 namespace VelocityCoders.FitnessPratice.WebForm
 {
-    public partial class FitnessPractice : System.Web.UI.Page
+    public partial class PersonCollection : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

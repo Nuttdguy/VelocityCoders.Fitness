@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
 
@@ -8,12 +7,15 @@ namespace VelocityCoders.FitnessPractice.BLL
     public static class PersonManager
     {
         #region GET-ITEM 
-        public static PersonCollectionList GetPersonItem(int personId)
+        public static Person GetPersonItem(int personId)
         {
-            return new PersonCollectionList();
+
+            Person myItem = PersonDAL.GetItem(personId);
+            return myItem;
 
         }
         #endregion
+
 
         #region GET-COLLECTION
         public static PersonCollectionList GetPersonCollection()

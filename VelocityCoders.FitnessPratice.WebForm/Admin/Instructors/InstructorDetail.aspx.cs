@@ -1,6 +1,5 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
 using VelocityCoders.FitnessPractice.BLL;
 
 
@@ -19,7 +18,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
             if (instructorId > 0)
             {
-                Instructor instructorLookup = InstructorDAL.GetItem(instructorId);
+                Instructor instructorLookup = InstructorManager.GetInstructorItem(instructorId);
                 if (instructorLookup != null)
                 {
                     lblInstructorId.Text = instructorLookup.InstructorId.ToString();

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersonCollection.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.FitnessPractice" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersonCollection.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.PersonCollection" %>
 
 <!DOCTYPE html>
 

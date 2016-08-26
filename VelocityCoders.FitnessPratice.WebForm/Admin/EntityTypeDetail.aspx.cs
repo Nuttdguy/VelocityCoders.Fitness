@@ -1,5 +1,5 @@
 ﻿using System;
-using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 using VelocityCoders.FitnessPractice.Models;
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin
@@ -17,7 +17,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
             if (myItem > 0 )
             {
-                EntityType myItemLookup = EntityTypeDAL.GetItem(myItem);
+                EntityType myItemLookup = EntityTypeManager.GetItem(myItem);
                 if(myItemLookup != null)
                 {
                     lblEntityTypeId.Text = myItemLookup.EntityId.ToString();
@@ -28,5 +28,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
                 }
             }
         }
+
+
     }
 }

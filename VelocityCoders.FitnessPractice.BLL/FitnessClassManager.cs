@@ -10,9 +10,10 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region GET-ITEM
-        public static FitnessClassCollectionList GetFitnessClassItem(int fitnessClassId)
+        public static FitnessClass GetFitnessClassItem(int fitnessClassId)
         {
-            return new FitnessClassCollectionList { };
+            FitnessClass MyFitnessClassItem = FitnessClassDAL.GetItem(fitnessClassId);
+            return MyFitnessClassItem;
         }
         #endregion
 
