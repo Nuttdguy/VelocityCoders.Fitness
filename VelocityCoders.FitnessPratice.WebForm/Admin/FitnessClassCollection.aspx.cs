@@ -1,6 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin
@@ -14,11 +14,10 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
 
         private void BindFitnessClass()
         {
-            FitnessClassCollectionList fitClassList = new FitnessClassCollectionList();
-            //fitClassList = FitnessClassDAL;
-            fitClassList = FitnessClassDAL.GetCollection();
+            FitnessClassCollectionList FitClassList = new FitnessClassCollectionList();
+            FitClassList = FitnessClassManager.GetFitnessClassCollection();
 
-            repeaterText.DataSource = fitClassList;
+            repeaterText.DataSource = FitClassList;
             repeaterText.DataBind();
         }
     }

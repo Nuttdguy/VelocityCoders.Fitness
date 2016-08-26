@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EntityManager.cs" />
     <Compile Include="EntityTypeManager.cs" />
+    <Compile Include="FitnessClassManager.cs" />
     <Compile Include="InstructorManager.cs" />
     <Compile Include="PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
