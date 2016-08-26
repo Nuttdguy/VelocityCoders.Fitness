@@ -42,10 +42,7 @@
         <tr>
           <td><label>Employee Type:</label></td>
           <td>
-            <asp:DropDownList runat="server" ID="drpEmployeeType">
-              <asp:ListItem Text="(Select one)" Value="" />
-              <asp:ListItem Text="Hourly" Value="True" />
-            </asp:DropDownList>
+            <asp:DropDownList runat="server" ID="drpEmployeeType" DataTextField="EntityTypeName" DataValueField="EntityTypeId" />
           </td>
         </tr>
         <tr>

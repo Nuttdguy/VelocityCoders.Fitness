@@ -1,6 +1,7 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors

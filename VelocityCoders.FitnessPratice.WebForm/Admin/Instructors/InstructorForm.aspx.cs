@@ -1,7 +1,7 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
+using VelocityCoders.FitnessPractice.BLL;
 using System.Text;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
@@ -11,7 +11,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         protected void Page_Load(object sender, EventArgs e)
         {
             this.BindInstructorNavigation();
+            this.BindEmployeeType();
         }
+
 
         private void BindInstructorNavigation()
         {
@@ -20,6 +22,22 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
                 instructorNavigation.InstructorId = 1;
             #endregion
         }
+
+
+        private void BindEmployeeType()
+        {
+            #region USE BUSINESS LOGIC LAYER TO RETRIEVE DATA USING METHODS OF THE DAL LAYER
+
+            EntityTypeCollectionList bindEmployeeTypeDropDown = EntityTypeManager.GetCollection(EntityNames.EmployeeType, QuerySelectType.GetEntityType);
+
+            drpEmployeeType.DataSource = bindEmployeeTypeDropDown;
+            drpEmployeeType.DataBind();
+
+            drpEmployeeType.Items.Insert(0, new ListItem { Text=" ( Select an employee type )", Value="0" });
+
+            #endregion
+        }
+
 
         protected void ProcessForm()
         {

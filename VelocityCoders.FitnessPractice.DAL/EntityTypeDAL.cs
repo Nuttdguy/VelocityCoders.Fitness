@@ -42,6 +42,39 @@ namespace VelocityCoders.FitnessPractice.DAL
 
         #endregion
 
+        #region GET_COLLECTION_BY_ENTITYTYPE
+        public static EntityTypeCollectionList GetCollection(int entityNameById, int queryId)
+        {
+            EntityTypeCollectionList tmpList = null;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_GetEntityType", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+                    myCommand.Parameters.AddWithValue("@EntityId", entityNameById);
+
+                    myConnection.Open();
+                    using (SqlDataReader myReader = myCommand.ExecuteReader())
+                    {
+                        if (myReader.HasRows)
+                        {
+                            tmpList = new EntityTypeCollectionList();
+                            while (myReader.Read())
+                            {
+
+                                tmpList.Add(FillDataRecord(myReader));
+                            }
+                        }
+                        myReader.Close();
+                    }
+                }
+            }
+            return tmpList;
+        }
+        #endregion
+
         #region GET_COLLECTION
         public static EntityTypeCollectionList GetCollection()
         {
@@ -77,18 +110,20 @@ namespace VelocityCoders.FitnessPractice.DAL
         public static EntityType FillDataRecord(IDataReader myDataRecord)
         {
             EntityType myObject = new EntityType();
-            myObject.EntityTypeId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("EntityTypeId"));
 
-            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EntityId")))
-                myObject.EntityId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("EntityId"));
-            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Description")))
-                myObject.Description = myDataRecord.GetString(myDataRecord.GetOrdinal("Description"));
-            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("DisplayName")))
-                myObject.DisplayName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayName"));
-            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EntityTypeName")))
-                myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("EntityTypeName"));
+                myObject.EntityTypeId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("EntityTypeId"));
+
+                if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EntityId")))
+                    myObject.EntityId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("EntityId"));
+                if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Description")))
+                    myObject.Description = myDataRecord.GetString(myDataRecord.GetOrdinal("Description"));
+                if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("DisplayName")))
+                    myObject.DisplayName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayName"));
+                if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("EntityTypeName")))
+                    myObject.EntityTypeName = myDataRecord.GetString(myDataRecord.GetOrdinal("EntityTypeName"));
 
             return myObject;
+
         }
         #endregion
 

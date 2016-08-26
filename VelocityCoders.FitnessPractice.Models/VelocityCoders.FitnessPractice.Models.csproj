@@ -45,7 +45,7 @@
     <Compile Include="Email.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityType.cs" />
-    <Compile Include="Enums\EntityEnum.cs" />
+    <Compile Include="Enums\EntityNames.cs" />
     <Compile Include="Enums\InstructorNavigation.cs" />
     <Compile Include="Enums\QuerySelectType.cs" />
     <Compile Include="Extensions\Extension.cs" />

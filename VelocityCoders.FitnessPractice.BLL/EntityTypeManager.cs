@@ -1,10 +1,7 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace VelocityCoders.FitnessPractice.BLL
 {
@@ -12,26 +9,29 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region RETRIEVE SINGLE ITEM
-        public static EntityType GetItem(int EntityTypeId)
+        //public static EntityType GetItem(int EntityTypeId)
+        //{
+        //    //== Call DAL to retrieve item by Id
+        //    return new EntityType { };
+        //}
+        #endregion
+
+        #region RETRIEVE COLLECTION BY ENTITY TYPE
+        public static EntityTypeCollectionList GetCollection(EntityNames entityNameById, QuerySelectType queryId)
         {
-            //== Call DAL to retrieve item by Id
-            return new EntityType { };
+
+            EntityTypeCollectionList entityTypeCollection = EntityTypeDAL.GetCollection((int)entityNameById, (int)queryId);
+            return entityTypeCollection;
         }
         #endregion
 
-        #region RETRIEVE COLLECTION
-        public static EntityTypeCollectionList GetCollection(EntityEnum entityName)
-        {
-            //== Call DAL to retrieve Collection
-            EntityTypeCollectionList entityTypeCollection = EntityTypeDAL.GetCollection();
-            return entityTypeCollection;
-        }
 
-        public static EntityTypeCollectionList GetCollection()
-        {
-            //== Call DAL to retrieve Collection
-            return new EntityTypeCollectionList { };
-        }
+        #region GET_COLLECTION W/OUT PARAMETER
+        //public static EntityTypeCollectionList GetCollection()
+        //{
+        //    //== Call DAL to retrieve Collection
+        //    return new EntityTypeCollectionList { };
+        //}
 
         #endregion
 

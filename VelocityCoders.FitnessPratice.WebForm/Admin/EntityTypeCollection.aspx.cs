@@ -1,6 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using VelocityCoders.FitnessPractice.DAL;
+using VelocityCoders.FitnessPractice.BLL;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
         private void BindEntityType()
         {
             EntityTypeCollectionList bindObject = new EntityTypeCollectionList();
-            bindObject = EntityTypeDAL.GetCollection();
+            bindObject = EntityTypeManager.GetCollection(EntityNames.EmployeeType, QuerySelectType.GetEntityType);
+            
+            // bindObject = EntityTypeDAL.GetCollection();
 
             repeaterText.DataSource = bindObject;
             repeaterText.DataBind();
