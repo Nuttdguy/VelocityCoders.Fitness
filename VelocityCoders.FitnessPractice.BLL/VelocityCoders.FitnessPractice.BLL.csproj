@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VelocityCoders.FitnessPractice.DAL\VelocityCoders.FitnessPractice.DAL.csproj">
+      <Project>{7520a976-b059-4185-b86b-0f8445fc4978}</Project>
+      <Name>VelocityCoders.FitnessPractice.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VelocityCoders.FitnessPractice.Models\VelocityCoders.FitnessPractice.Models.csproj">
       <Project>{50db5f11-7769-4a57-ae79-f84d7f3bd64c}</Project>
       <Name>VelocityCoders.FitnessPractice.Models</Name>

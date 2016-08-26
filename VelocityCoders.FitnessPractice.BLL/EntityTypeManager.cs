@@ -1,5 +1,6 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
+using VelocityCoders.FitnessPractice.DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,13 @@ namespace VelocityCoders.FitnessPractice.BLL
 
         #region RETRIEVE COLLECTION
         public static EntityTypeCollectionList GetCollection(EntityEnum entityName)
+        {
+            //== Call DAL to retrieve Collection
+            EntityTypeCollectionList entityTypeCollection = EntityTypeDAL.GetCollection();
+            return entityTypeCollection;
+        }
+
+        public static EntityTypeCollectionList GetCollection()
         {
             //== Call DAL to retrieve Collection
             return new EntityTypeCollectionList { };
