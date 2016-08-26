@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using VelocityCoders.FitnessPractice.BLL;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.DAL;
 
@@ -14,10 +14,8 @@ namespace VelocityCoders.FitnessPratice.WebForm
 
         private void BindPersonList()
         {
-            //PersonCollection personList = new PersonCollection();
-            //personList = PersonDAL.GetCollection();
 
-            PersonCollectionList personList = PersonDAL.GetCollection();
+            PersonCollectionList personList = PersonManager.GetPersonCollection();
 
             if (personList != null)
             {
