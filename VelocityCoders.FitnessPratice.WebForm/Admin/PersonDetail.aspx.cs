@@ -21,12 +21,12 @@ namespace VelocityCoders.FitnessPratice.WebForm
 
                 if (personLookup != null)
                 {
-                    lblPersonId.Text = personLookup.personId.ToString();
-                    lblFirstName.Text = personLookup.firstName;
-                    lblLastName.Text = personLookup.lastName;
-                    lblDisplayName.Text = personLookup.displayFirstName;
+                    lblPersonId.Text = personLookup.PersonId.ToString();
+                    lblFirstName.Text = personLookup.FirstName;
+                    lblLastName.Text = personLookup.LastName;
+                    lblDisplayName.Text = personLookup.DisplayFirstName;
                     lblBirthDate.Text = personLookup.BirthDate.ToLongTimeString();
-                    lblGender.Text = personLookup.gender;
+                    lblGender.Text = personLookup.Gender;
                 }
                 else
                     lblMessage.Text = "Person could not be found.";

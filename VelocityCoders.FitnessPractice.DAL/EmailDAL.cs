@@ -37,6 +37,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         }
         #endregion
 
+
         #region GET_COLLECTION
         public static EmailCollectionList GetCollection()
         {

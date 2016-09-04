@@ -17,9 +17,13 @@ namespace VelocityCoders.FitnessPractice.Models
             DateTime dateTime;
 
             if (DateTime.TryParse(s, out dateTime))
+            {
                 return dateTime;
+            }
             else
-                return DateTime.MinValue;
+            {
+                return new DateTime(1973,1,1);
+            }
             #endregion
         }
 

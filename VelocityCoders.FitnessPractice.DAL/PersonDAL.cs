@@ -9,7 +9,52 @@ namespace VelocityCoders.FitnessPractice.DAL
     //== DEPENDING ON THE METHOD INVOKED
     public class PersonDAL
     {
-        #region GET_ITEM
+
+        #region INSERT-ITEM | RETURN INSERT RECORD ID
+
+        public static int Save(Person personToSave)
+        {
+            int result = 0;
+            QueryExecuteType queryId = QueryExecuteType.InsertItem;
+
+            if (personToSave.PersonId > 0)
+                queryId = QueryExecuteType.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+
+                    if (personToSave.PersonId > 0)
+                        myCommand.Parameters.AddWithValue("@PersonId", personToSave.PersonId);
+                    if (personToSave.FirstName != null)
+                        myCommand.Parameters.AddWithValue("@FirstName", personToSave.FirstName);
+                    if (personToSave.LastName != null)
+                        myCommand.Parameters.AddWithValue("@LastName", personToSave.LastName);
+                    if (personToSave.DisplayFirstName != null)
+                        myCommand.Parameters.AddWithValue("@DisplayFirstName", personToSave.DisplayFirstName);
+                    if (personToSave.BirthDate != null)
+                        myCommand.Parameters.AddWithValue("@BirthDate", personToSave.BirthDate);
+
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+                }
+                myConnection.Close();
+            }
+
+            return result;
+
+        }
+
+        #endregion
+
+        #region GET_ITEM | RETURN ITEM OR RECORD ROW
         //== THIS METHOD IS OF A PERSON CLASS DATA TYPE AND HAS A PARAMETER SIGNATURE OF INT
         public static Person GetItem(int personId)
         {
@@ -60,7 +105,30 @@ namespace VelocityCoders.FitnessPractice.DAL
         }
         #endregion
 
-        #region GET_COLLECTION
+
+        #region DELETE PERSON FROM TABLE
+        public static bool Delete(int personId)
+        {
+            int result = 0;
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecutePerson", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", QueryExecuteType.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@PersonId", personId);
+
+                    myConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+                }
+                myConnection.Close();
+            }
+            return result > 0;
+        }
+
+        #endregion
+
+        #region GET_COLLECTION | RETURN COLLECTION/LIST OF ALL ROWS
         public static PersonCollectionList GetCollection()
         {
             PersonCollectionList tmpList = null;
@@ -99,17 +167,17 @@ namespace VelocityCoders.FitnessPractice.DAL
             //== A NEW OBJECT OF PERSON TYPE IS THEN INSTANTIATED AND CREATED
             Person myPersonObject = new Person();
             //== THE PROPERTY PERSONID OF THE NEW INSTANCE OF PERSON OBJECT IS SET
-            myPersonObject.personId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("PersonId"));
+            myPersonObject.PersonId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("PersonId"));
 
             //== IF STATEMENT IS USED HERE TO CHECK WHETHER DATA EXISTS; IF TRUE, SET THE PROPERTY
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("FirstName")))
-                myPersonObject.firstName = myDataRecord.GetString(myDataRecord.GetOrdinal("FirstName"));
+                myPersonObject.FirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("FirstName"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("LastName")))
-                myPersonObject.lastName = myDataRecord.GetString(myDataRecord.GetOrdinal("LastName"));
+                myPersonObject.LastName = myDataRecord.GetString(myDataRecord.GetOrdinal("LastName"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("DisplayFirstName")))
-                myPersonObject.displayFirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayFirstName"));
+                myPersonObject.DisplayFirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("DisplayFirstName"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Gender")))
-                myPersonObject.gender = myDataRecord.GetString(myDataRecord.GetOrdinal("Gender"));
+                myPersonObject.Gender = myDataRecord.GetString(myDataRecord.GetOrdinal("Gender"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("BirthDate")))
                 myPersonObject.BirthDate = myDataRecord.GetDateTime(myDataRecord.GetOrdinal("BirthDate"));
 

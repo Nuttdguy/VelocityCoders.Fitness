@@ -6,11 +6,16 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+  <asp:HiddenField runat="server" ID="hidInstructorId" Value="0" />
+  <asp:HiddenField runat="server" ID="hidPersonId" Value="0" />
 
   <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
     <div id="InstructorContainer" class="BorderRadiusBottom" >         
-      <p><asp:Label runat="server" ID="lblPageMessage" /></p>
-      <br />
+      <p ><asp:Label runat="server" ID="lblPageMessage" CssClass="showPageMessage"/></p>
+
+<%--      <div class="FloatLeft">
+        <asp:DropDownList runat="server" ID="EmployeeSelectList" CssClass="SmallText" DataTextField="FullName" DataValueField="EmployeeId" OnSelectedIndexChanged="EmployeeSelectList_Selected" AutoPostBack="true" />
+      </div>--%>
       <table>
         <tr>
           <td><label>FirstName: </label></td>
@@ -27,9 +32,6 @@
         <tr>
           <td><label>Date of Birth:</label></td>
           <td><asp:TextBox runat="server" ID="txtBirthDate" MaxLength="10"/></td>
-        </tr>
-        <tr>
-          <td colspan="2"><hr /></td>
         </tr>
         <tr>
           <td><label>Date of Hire:</label></td>
@@ -62,6 +64,11 @@
 
       </table>
       <br />
-      <asp:Button runat="server" Text="Save" OnClick="Save_Click"/>
+      <div class="ContainerBar" >
+        <asp:Button runat="server" Text="Save" ID="btnSave" OnClick="Save_Click" />
+        <asp:Button runat="server" Text="Cancel" ID="btnCancel" OnClick="Cancel_Click" />
+        <span class="FloatRight" ><asp:Button runat="server" Text="Delete" ID="btnDelete" OnClick="Delete_Click" Visible="false" /></span>
+      </div>
+
     </div> <!-- END INSTRUCTOR CONTAINER -->
 </asp:Content>

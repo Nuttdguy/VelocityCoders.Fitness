@@ -4,12 +4,12 @@ namespace VelocityCoders.FitnessPractice.Models
 {
     public enum EntityNames
     {
-        None = 1,
-        EmailType = 2,
-        FitnessClassCategory = 3,
-        EmployeeType = 4,
-        PhoneType = 5,
-        FaxType = 6
+        None = 0,
+        EmailType = 1,
+        FitnessClassCategory = 2,
+        EmployeeType = 3,
+        PhoneType = 4,
+        FaxType = 5
 
     }
 }

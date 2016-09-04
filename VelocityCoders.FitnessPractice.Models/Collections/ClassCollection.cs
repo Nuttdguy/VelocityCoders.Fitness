@@ -14,7 +14,7 @@ namespace VelocityCoders.FitnessPractice.Models
 
     public class InstructorCollectionList : BaseCollection<Instructor>
     {
-
+        
     }
 
     public class FitnessClassCollectionList : BaseCollection<FitnessClass>
@@ -33,6 +33,11 @@ namespace VelocityCoders.FitnessPractice.Models
     }
 
     public class EmailCollectionList : BaseCollection<Email>
+    {
+
+    }
+
+    public class EmailAddressCollection : BaseCollection<EmailAddress>
     {
 
     }

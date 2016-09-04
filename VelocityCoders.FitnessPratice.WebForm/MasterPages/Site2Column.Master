@@ -37,13 +37,12 @@
 
           <div id="BodyContainer" >
             <div id="BodyContainerContent" >
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
         
                 </asp:ContentPlaceHolder>
               </div>
             </div>
           </div>
-
         <div id="Footer">
           <div>&copy; 2016 - Velocity Coders </div>
         </div>

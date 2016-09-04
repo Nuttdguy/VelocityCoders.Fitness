@@ -76,9 +76,11 @@
     <Content Include="Admin\Instructors\InstructorCollection.aspx" />
     <Content Include="Admin\Instructors\InstructorDetail.aspx" />
     <Content Include="Admin\Instructors\InstructorForm.aspx" />
+    <Content Include="Admin\Instructors\InstructorList.aspx" />
     <Content Include="App_Themes\Main\FormControls.css" />
     <Content Include="App_Themes\Main\Images\background-banner.jpg" />
     <Content Include="App_Themes\Main\Images\header-logo.png" />
+    <Content Include="Error.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Main\Main.css" />
@@ -169,6 +171,13 @@
     <Compile Include="Admin\Instructors\InstructorForm.aspx.designer.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Instructors\InstructorList.aspx.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorList.aspx.designer.cs">
+      <DependentUpon>InstructorList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PersonCollection.aspx.cs">
       <DependentUpon>PersonCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,6 +191,16 @@
     </Compile>
     <Compile Include="Admin\PersonDetail.aspx.designer.cs">
       <DependentUpon>PersonDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

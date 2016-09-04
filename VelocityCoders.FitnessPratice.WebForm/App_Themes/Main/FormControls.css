@@ -30,4 +30,24 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.Button {
+  font: bold 11px/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #808080;
+  text-shadow: #fff 0 1px 0;
+  cursor: pointer;
 
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+
+  background: linear-gradient(top, #f8f8f9, #e6e6e8);
+  text-decoration: none;
+}
+
+.ButtonRoundedLeft {
+  border-radius: 5px 0 0 5px;
+}
+
+.ButtonRoundedRight {
+  border-radius: 0px 5px 5px 0px;
+}
