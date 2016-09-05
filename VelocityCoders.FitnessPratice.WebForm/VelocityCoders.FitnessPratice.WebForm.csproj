@@ -96,6 +96,7 @@
     <Content Include="Admin\PersonCollection.aspx" />
     <Content Include="Admin\PersonDetail.aspx" />
     <Content Include="UserControls\InstructorNavigationControl.ascx" />
+    <Content Include="UserControls\MessageBrokenRulesControl.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="UserControls\InstructorNavigationControl.ascx.designer.cs">
       <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageBrokenRulesControl.ascx.designer.cs">
+      <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

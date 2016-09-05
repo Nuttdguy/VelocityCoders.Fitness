@@ -40,13 +40,13 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors {
         protected global::VelocityCoders.FitnessPratice.WebForm.UserControls.InstructorNavigationControl instructorNavigation;
         
         /// <summary>
-        /// lblPageMessage control.
+        /// CustomMessageArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPageMessage;
+        protected global::VelocityCoders.FitnessPratice.WebForm.UserControls.MessageBrokenRulesControl CustomMessageArea;
         
         /// <summary>
         /// txtFirstName control.

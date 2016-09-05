@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" Theme="Main" AutoEventWireup="true" MasterPageFile="~/MasterPages/Site2Column.Master" CodeBehind="InstructorForm.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.Instructors.InstructorForm" EnableViewState="true" %>
 
+<%@ Register TagPrefix="CustomVelocityCoders" TagName="MessageArea" Src="~/UserControls/MessageBrokenRulesControl.ascx" %>
 <%@ Register TagPrefix="CustomVelocityCoders" TagName="InstructorNavigation" Src="~/UserControls/InstructorNavigationControl.ascx" %>
-
 
 
 
@@ -10,12 +10,11 @@
   <asp:HiddenField runat="server" ID="hidPersonId" Value="0" />
 
   <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
-    <div id="InstructorContainer" class="BorderRadiusBottom" >         
-      <p ><asp:Label runat="server" ID="lblPageMessage" CssClass="showPageMessage"/></p>
+    
+  <div id="InstructorContainer" class="BorderRadiusBottom" >
+   <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="true" />
+<%--   <div class="PageMessage"><asp:Label runat="server" ID="lblPageMessage" /></div>--%>
 
-<%--      <div class="FloatLeft">
-        <asp:DropDownList runat="server" ID="EmployeeSelectList" CssClass="SmallText" DataTextField="FullName" DataValueField="EmployeeId" OnSelectedIndexChanged="EmployeeSelectList_Selected" AutoPostBack="true" />
-      </div>--%>
       <table>
         <tr>
           <td><label>FirstName: </label></td>

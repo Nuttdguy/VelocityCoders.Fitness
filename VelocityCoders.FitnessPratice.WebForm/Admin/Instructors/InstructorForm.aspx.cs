@@ -62,7 +62,8 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            this.ProcessForm();
+            if (ValidateForm())
+                this.ProcessForm();
         }
 
         protected void Cancel_Click(object sender, EventArgs e)
@@ -84,13 +85,13 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
                 if (InstructorManager.Delete(instructorId))
                 {
                     Response.Redirect("InstructorList.aspx");
-                    base.DisplayPageMessage(lblPageMessage, "Record deleted successfully");
+                    DisplayLocalMessage("Record deleted successfully");
                 }
                 else
-                    base.DisplayPageMessage(lblPageMessage, "Error. Delete failed.");
+                    DisplayLocalMessage("Error. Delete failed.");
             }
             else
-                base.DisplayPageMessage(lblPageMessage, "Invalid ID. Delete failed.");
+                DisplayLocalMessage("Invalid ID. Delete failed.");
 
         }
 
@@ -173,6 +174,72 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
         }
 
+        //== FOR VAIDATION ERRORS
+        private void DisplayLocalMessage(string message)
+        {
+            //DisplayLocalMessage(message, new BrokenRuleCollection());
+            CustomMessageArea.Visible = true;
+            CustomMessageArea.Message = message;
+
+            CustomMessageArea.Display();
+
+        }
+
+        private void DisplayLocalMessage(string message, BrokenRuleCollection brokenRules)
+        {
+            CustomMessageArea.Visible = true;
+            CustomMessageArea.Message = message;
+
+            if (brokenRules.Count > 0)
+                CustomMessageArea.BrokenRules = brokenRules;
+
+            CustomMessageArea.Display();
+        }
+
+        private bool ValidateForm()
+        {
+            bool returnValue = true;
+            BrokenRuleCollection brokenRules = new BrokenRuleCollection();
+
+            //== validate form controls; required fields ==\\
+
+            if (string.IsNullOrEmpty(txtFirstName.Text.Trim()))
+                brokenRules.Add("First Name", "Required field");
+            if (string.IsNullOrEmpty(txtLastName.Text.Trim()))
+                brokenRules.Add("Last Name", "Required field");
+            if (drpEmployeeType.SelectedValue == "0")
+                brokenRules.Add("Employee Type", "Select an Employee Type from the drop-down.");
+            if (drpGender.SelectedValue == "0")
+                brokenRules.Add("Gender", "Select a Gender from the drop-down.");
+
+            //== validate dates if user entered in data ==\\
+
+            if (!string.IsNullOrEmpty(txtBirthDate.Text.Trim()))
+                brokenRules.Add("Date of Birth", "Please enter a valid date.");
+            if (!string.IsNullOrEmpty(txtHireDate.Text.Trim()))
+                brokenRules.Add("Date of Hire", "Please enter a valid date.");
+            if (!string.IsNullOrEmpty(txtTermDate.Text.Trim()))
+                brokenRules.Add("Date of Termination", "Please enter a valid date.");
+
+            //== check if broken rules collection has any items
+
+            if (brokenRules.Count > 0)
+            {
+                //== Bind collection list to the list control
+                //MessageList.DataSource = brokenRules;
+                //MessageList.DataBind();
+
+                //== check to see if there were multiple errors - display appropriate message
+                if (brokenRules.Count == 1)
+                    DisplayLocalMessage("There was an error processing your form. Please correct and try saving again.");
+                else
+                    DisplayLocalMessage("There were some errors processing your form. Please correct and try saving again.");
+
+                returnValue = false;
+            }
+
+            return returnValue;
+        }
 
         #region ProcessForm METHOD | INVOKED WHEN CLICK_EVENT "Save_Click" is clicked
         protected void ProcessForm()
@@ -216,7 +283,11 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
             InstructorManager.Save(instructorToSave);
 
-            base.DisplayPageMessage(lblPageMessage, "Update was successful.");
+            if(instructorToSave.InstructorId > 0)
+                { this.DisplayLocalMessage("Update was successful"); }
+            else
+                { Response.Redirect("InstructorList.aspx"); }
+            //base.DisplayPageMessage(lblPageMessage, "Update was successful.");
 
             #endregion
 

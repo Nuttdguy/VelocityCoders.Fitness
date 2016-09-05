@@ -9,12 +9,36 @@ namespace VelocityCoders.FitnessPractice.BLL
 
         public static int Save(int instructorId, EmailAddress emailToSave)
         {
-            return EmailAddressDAL.Save(instructorId, emailToSave);
+            BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
+
+            if (instructorId <= 0)
+                saveBrokenRules.Add("Person", "Invalid ID.");
+
+            ValidateEmail(emailToSave, ref saveBrokenRules);
+
+            if (emailToSave.EmailType.EntityTypeId <= 0)
+            {
+                saveBrokenRules.Add("Email Address Type", "Type is required.");
+            }
+
+            if (saveBrokenRules.Count > 0)
+            {
+                throw new CustomExceptions("There was an error saving Email.", saveBrokenRules);
+            }
+            else
+            {
+                return EmailAddressDAL.Save(instructorId, emailToSave);
+            }
+
         }
+
 
         public static bool Delete(int emailId)
         {
-            return EmailAddressDAL.Delete(emailId);
+            if (emailId > 0)
+                return EmailAddressDAL.Delete(emailId);
+            else
+                throw new CustomExceptions("Delete failed. Email ID is invalid: " + emailId.ToString());
         }
 
 
@@ -27,6 +51,36 @@ namespace VelocityCoders.FitnessPractice.BLL
         public static EmailAddress GetItemByEmailId(int emailId)
         {
             return EmailAddressDAL.GetItem(emailId);
+        }
+
+        //==  EMAIL ADDRESS VALIDATION  ==\\
+        private static bool ValidateEmail(EmailAddress emailToValidate, ref BrokenRuleCollection brokenRules)
+        {
+            bool returnValue = true;
+
+            if (emailToValidate != null)
+            {
+                if (!string.IsNullOrEmpty(emailToValidate.EmailValue))
+                {
+                    if (!EmailValidator.IsValid(emailToValidate.EmailValue.Trim()))
+                    {
+                        brokenRules.Add("Email Address", emailToValidate.EmailValue.Trim() + " is an invalid email format.");
+                        returnValue = false;
+                    }
+                }
+                else
+                {
+                    brokenRules.Add("Email Address", "Email is required");
+                    returnValue = false;
+                }
+            }
+            else
+            {
+                brokenRules.Add("Email Address", "Email class was not instantiated.");
+                returnValue = false;
+            }
+
+            return returnValue;
         }
 
     }

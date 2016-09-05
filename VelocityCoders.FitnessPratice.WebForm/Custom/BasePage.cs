@@ -19,7 +19,7 @@ namespace VelocityCoders.FitnessPratice.WebForm
         }
 
         //=========    ERROR METHOD | AVAILABLE FOR ALL PAGES INHERITING BASEPAGE     ===================//
-        public void DisplayPageMessage(Label labelControl, string messageToDisplay)
+        public void DisplayLocalMessageDisplayPageMessage(Label labelControl, string messageToDisplay)
         {
             this.DisplayPageMessage(labelControl, messageToDisplay, false);
         }

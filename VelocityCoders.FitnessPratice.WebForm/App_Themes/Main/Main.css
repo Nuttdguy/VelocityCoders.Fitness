@@ -303,3 +303,35 @@ table {
   background-color: #fff;
   min-height: 200px;
 }
+
+
+/*  ADDED FROM SERVER-SIDE VALIDATION DOCUMENT  */
+
+.PageMessage {
+  display: block;
+  background-color: #990000;
+  font-weight: bold;
+  font-size: 12px;
+  color: #990000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.PageMessage span,
+.PageMessage li {
+  color: #f1f1f1;
+}
+
+#EmployeeContainer,
+#GenericContainer,
+#Container,
+.PageMessage,
+.BorderRadius,
+.BorderRadiusAll,
+.BorderRadiusBottom,
+.BorderRadiusTop {
+  border: 1px solid #ccc;
+
+  box-shadow: rgba(0,0,0,0.1) 0 0 2px 0px;
+}
+
