@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VelocityCoders.FitnessPractice.Models
 {
-    public class CustomExceptions : Exception
+    public class BLLException : Exception
     {
         //====  PROPERTIES
         public BrokenRuleCollection BrokenRules { get; set; }
@@ -14,18 +14,18 @@ namespace VelocityCoders.FitnessPractice.Models
 
         //====  CONSTRUCTORS
 
-        public CustomExceptions() : base() { }        
+        public BLLException() : base() { }        
 
-        public CustomExceptions(string message) : base(message) { }
+        public BLLException(string message) : base(message) { }
 
-        public CustomExceptions(string message, BrokenRuleCollection brokenRules) : base(message)
+        public BLLException(string message, BrokenRuleCollection brokenRules) : base(message)
         {
             this.BrokenRules = brokenRules;
         }
 
-        public CustomExceptions(string message, Exception inner) : base(message, inner) { }
+        public BLLException(string message, Exception inner) : base(message, inner) { }
 
-        public CustomExceptions(string message, Exception inner, BrokenRuleCollection brokenRules) : base(message, inner)
+        public BLLException(string message, Exception inner, BrokenRuleCollection brokenRules) : base(message, inner)
         {
             this.BrokenRules = brokenRules;
         }

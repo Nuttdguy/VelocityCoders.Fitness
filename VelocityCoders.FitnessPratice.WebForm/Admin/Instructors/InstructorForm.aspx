@@ -12,8 +12,7 @@
   <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
     
   <div id="InstructorContainer" class="BorderRadiusBottom" >
-   <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="true" />
-<%--   <div class="PageMessage"><asp:Label runat="server" ID="lblPageMessage" /></div>--%>
+   <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
 
       <table>
         <tr>

@@ -10,11 +10,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <asp:HiddenField runat="server" ID="hidEmailId" Value="0" />
+
   <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
       <div id="InstructorContainer" class="BorderRadiusBottom" >
-      <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
-
-<%--        <div class="PageMessage"><asp:Label runat="server" ID="lblPageMessage" /></div>--%>
+        <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
 
         <table>
           <tr>

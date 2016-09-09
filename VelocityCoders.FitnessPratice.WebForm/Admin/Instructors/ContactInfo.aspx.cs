@@ -1,12 +1,9 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
 using VelocityCoders.FitnessPractice.BLL;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+
+
 
 namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 {
@@ -20,10 +17,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
             {
                 BindEmailType();
                 BindEmailList();
-            }
-            else
-            {
-                int testInt = Convert.ToInt32(txtEmailAddress.Text);
             }
         }
 
@@ -62,9 +55,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
             try
             {
                 InstructorManager.SaveEmail(InstructorId, emailToSave);
-                Response.Redirect("ContactInfo.aspx?InstructorId=" + base.InstructorId.ToString());
+                Response.Redirect("ContactInfo.aspx?InstructorId=" + InstructorId.ToString());
             }
-            catch (CustomExceptions ex)
+            catch (BLLException ex)
             {
                 if (ex.BrokenRules != null && ex.BrokenRules.Count > 0)
                     DisplayLocalMessage(ex.Message, ex.BrokenRules);
@@ -142,7 +135,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
                     DisplayLocalMessage( "Delete of email failed. Contact administrator.");
                 }
             }
-            catch (CustomExceptions ex)
+            catch (BLLException ex)
             {
                 if (ex.BrokenRules != null && ex.BrokenRules.Count > 0)
                     DisplayLocalMessage(ex.Message, ex.BrokenRules);
@@ -156,6 +149,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
             this.ProcessEmail();
         }
 
+        //=========================================================
 
         private void DisplayLocalMessage(string message)
         {

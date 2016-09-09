@@ -12,7 +12,7 @@ namespace VelocityCoders.FitnessPractice.BLL
             BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
 
             if (instructorId <= 0)
-                saveBrokenRules.Add("Person", "Invalid ID.");
+                saveBrokenRules.Add("Instructor", "Invalid ID.");
 
             ValidateEmail(emailToSave, ref saveBrokenRules);
 
@@ -23,7 +23,7 @@ namespace VelocityCoders.FitnessPractice.BLL
 
             if (saveBrokenRules.Count > 0)
             {
-                throw new CustomExceptions("There was an error saving Email.", saveBrokenRules);
+                throw new BLLException("There was an error saving Email.", saveBrokenRules);
             }
             else
             {
@@ -38,7 +38,7 @@ namespace VelocityCoders.FitnessPractice.BLL
             if (emailId > 0)
                 return EmailAddressDAL.Delete(emailId);
             else
-                throw new CustomExceptions("Delete failed. Email ID is invalid: " + emailId.ToString());
+                throw new BLLException("Delete failed. Email ID is invalid: " + emailId.ToString());
         }
 
 

@@ -177,12 +177,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         //== FOR VAIDATION ERRORS
         private void DisplayLocalMessage(string message)
         {
-            //DisplayLocalMessage(message, new BrokenRuleCollection());
-            CustomMessageArea.Visible = true;
-            CustomMessageArea.Message = message;
-
-            CustomMessageArea.Display();
-
+            DisplayLocalMessage(message, new BrokenRuleCollection());
         }
 
         private void DisplayLocalMessage(string message, BrokenRuleCollection brokenRules)
@@ -225,15 +220,13 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
             if (brokenRules.Count > 0)
             {
-                //== Bind collection list to the list control
-                //MessageList.DataSource = brokenRules;
-                //MessageList.DataBind();
+                //== Bind collection list to the list control     
 
                 //== check to see if there were multiple errors - display appropriate message
                 if (brokenRules.Count == 1)
-                    DisplayLocalMessage("There was an error processing your form. Please correct and try saving again.");
+                    DisplayLocalMessage("There was an error processing your form. Please correct and try saving again.", brokenRules);
                 else
-                    DisplayLocalMessage("There were some errors processing your form. Please correct and try saving again.");
+                    DisplayLocalMessage("There were some errors processing your form. Please correct and try saving again.", brokenRules);
 
                 returnValue = false;
             }

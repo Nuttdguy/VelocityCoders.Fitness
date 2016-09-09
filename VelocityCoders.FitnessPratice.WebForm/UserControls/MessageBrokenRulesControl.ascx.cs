@@ -1,10 +1,10 @@
 ﻿using System;
 using VelocityCoders.FitnessPractice.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
+
+
 
 namespace VelocityCoders.FitnessPratice.WebForm.UserControls
 {
@@ -17,9 +17,12 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
 
 
         //===  SET PROPERTIES OF USER CONTROL
+
         public string Message { get; set; }
 
         public BrokenRuleCollection BrokenRules { get; set; }
+
+
 
         //===  METHOD FOR BINDING
 
@@ -34,6 +37,8 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
                 MessageList.DataBind();
             }
         }
+
+
 
         //=== PUBLIC METHOD TO ACCESS MESSAGE
         
