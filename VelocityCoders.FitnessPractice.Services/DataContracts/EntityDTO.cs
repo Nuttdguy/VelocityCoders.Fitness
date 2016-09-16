@@ -7,6 +7,7 @@ using System.Text;
 
 namespace VelocityCoders.FitnessPractice.Services.DataContracts
 {
+
     [DataContract(Name = "EntityDTO")]
     public class EntityDTO
     {

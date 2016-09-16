@@ -61,8 +61,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataContracts\EntityDTO.svc" />
-    <Content Include="DataContracts\EntityTypeDTO.svc" />
     <Content Include="EntityLookupService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -70,14 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContracts\Collections\ServiceCollection.cs" />
-    <Compile Include="DataContracts\EntityDTO.svc.cs">
-      <DependentUpon>EntityDTO.svc</DependentUpon>
-    </Compile>
-    <Compile Include="DataContracts\EntityTypeDTO.svc.cs">
-      <DependentUpon>EntityTypeDTO.svc</DependentUpon>
-    </Compile>
-    <Compile Include="DataContracts\IEntityDTO.cs" />
-    <Compile Include="DataContracts\IEntityTypeDTO.cs" />
+    <Compile Include="DataContracts\EntityDTO.cs" />
+    <Compile Include="DataContracts\EntityTypeDTO.cs" />
     <Compile Include="EntityLookupService.svc.cs">
       <DependentUpon>EntityLookupService.svc</DependentUpon>
     </Compile>
