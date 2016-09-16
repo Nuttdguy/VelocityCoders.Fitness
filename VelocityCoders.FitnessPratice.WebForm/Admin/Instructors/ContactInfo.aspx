@@ -9,27 +9,33 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  <asp:HiddenField runat="server" ID="hidInstructorId" Value="0" />
   <asp:HiddenField runat="server" ID="hidEmailId" Value="0" />
 
   <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
       <div id="InstructorContainer" class="BorderRadiusBottom" >
         <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
+        <div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div>
 
         <table>
           <tr>
-            <td><label>Email Address:</label></td>
+            <td><label class="Required">Email Address:</label></td>
             <td><asp:TextBox runat="server" ID="txtEmailAddress" MaxLength="50" /> </td>
           </tr>
           <tr>
-            <td><label>Email Type:</label></td>
+            <td><label class="Required">Email Type:</label></td>
             <td>
               <asp:DropDownList runat="server" ID="drpEmailType"  DataTextField="EntityTypeName" DataValueField="EntityTypeId" />
             </td>
           </tr>
         </table>
+
+
         <div class="ContainerBar">
           <asp:Button runat="server" Text="Add Email" ID="SaveButton" OnClick="Save_Click" />
         </div>
+
+
         <asp:Repeater runat="server" ID="rptEmailList" OnItemDataBound="EmailList_OnItemDataBound" >
           <HeaderTemplate>
             <table class="ListStyle BorderRadiusAll">

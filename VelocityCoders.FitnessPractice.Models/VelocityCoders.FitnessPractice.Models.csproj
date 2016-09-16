@@ -46,8 +46,11 @@
     <Compile Include="EmailAddress.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityType.cs" />
-    <Compile Include="Enums\EntityNames.cs" />
+    <Compile Include="Enums\EntityIdEnum.cs" />
+    <Compile Include="Enums\ExecuteEnum.cs" />
     <Compile Include="Enums\InstructorNavigation.cs" />
+    <Compile Include="Enums\LookupTableNavigation.cs" />
+    <Compile Include="Enums\MasterNavigation.cs" />
     <Compile Include="Enums\QueryExecuteType.cs" />
     <Compile Include="Enums\QuerySelectType.cs" />
     <Compile Include="Exceptions\CustomExceptions.cs" />
@@ -56,6 +59,7 @@
     <Compile Include="Instructor.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\SelectEnum.cs" />
     <Compile Include="Validation\BrokenRule.cs" />
     <Compile Include="Validation\EmailValidator.cs" />
   </ItemGroup>

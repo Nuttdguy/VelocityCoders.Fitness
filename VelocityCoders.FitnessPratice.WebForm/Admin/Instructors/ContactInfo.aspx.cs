@@ -11,13 +11,15 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.BindContactNavigation();
+            BindContactNavigation();
+            ValidateInstructorId("InstructorList.aspx");
 
             if (!IsPostBack)
             {
                 BindEmailType();
-                BindEmailList();
             }
+
+            BindEmailList();
         }
 
         private void BindContactNavigation()
@@ -30,7 +32,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
         protected void BindEmailType()
         {
-            EntityTypeCollectionList emailTypeList = EntityTypeManager.GetCollection(EntityNames.EmailType, QuerySelectType.GetEntityType);
+            EntityTypeCollectionList emailTypeList = EntityTypeManager.GetCollection(EntityIdEnum.EmailType, SelectEnum.GetCollectionById);
 
             emailTypeList.Insert(0, new EntityType { EntityTypeName = "(Select One)", EntityTypeId = 0 });
 
@@ -54,7 +56,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
             try
             {
-                InstructorManager.SaveEmail(InstructorId, emailToSave);
+                InstructorManager.SaveEmail(InstructorId, emailToSave);              
                 Response.Redirect("ContactInfo.aspx?InstructorId=" + InstructorId.ToString());
             }
             catch (BLLException ex)
@@ -80,7 +82,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
             }
         }
 
-
         protected void EmailList_OnItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -94,7 +95,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
                 deleteButton.CommandArgument = emailAddress.EmailId.ToString();
             }
         }
-
 
         private void BindUpdateInfo(int emailId)
         {
@@ -147,6 +147,18 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         protected void Save_Click(object sender, EventArgs e)
         {
             this.ProcessEmail();
+        }
+
+        public void ValidateInstructorId(string redirectPage)
+        {
+            if (InstructorId > 0)
+            {
+                
+            }
+            else
+            {
+                Response.Redirect(redirectPage);
+            }
         }
 
         //=========================================================

@@ -52,6 +52,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -74,13 +76,19 @@
     <Content Include="Admin\EmailDetail.aspx" />
     <Content Include="Admin\EntityTypeCollection.aspx" />
     <Content Include="Admin\EntityTypeDetail.aspx" />
+    <Content Include="Admin\FitnessClassArea\Default.aspx" />
     <Content Include="Admin\FitnessClassCollection.aspx" />
     <Content Include="Admin\FitnessClassDetail.aspx" />
+    <Content Include="Admin\GymLocationArea\Default.aspx" />
     <Content Include="Admin\Instructors\ContactInfo.aspx" />
     <Content Include="Admin\Instructors\InstructorCollection.aspx" />
     <Content Include="Admin\Instructors\InstructorDetail.aspx" />
     <Content Include="Admin\Instructors\InstructorForm.aspx" />
     <Content Include="Admin\Instructors\InstructorList.aspx" />
+    <Content Include="Admin\LookupTablesArea\Default.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityLookup.aspx" />
+    <Content Include="Admin\LookupTablesArea\EntityTypeLookup.aspx" />
+    <Content Include="Admin\ScheduleArea\Default.aspx" />
     <Content Include="App_Themes\Main\FormControls.css" />
     <Content Include="App_Themes\Main\Images\background-banner.jpg" />
     <Content Include="App_Themes\Main\Images\header-logo.png" />
@@ -90,6 +98,35 @@
     <Content Include="packages.config" />
     <Content Include="App_Themes\Main\Main.css" />
     <Content Include="MasterPages\Site2Column.Master" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.wsdl" />
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTOCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHelloWorld\HelloWorld1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,7 +137,23 @@
   <ItemGroup>
     <Content Include="Admin\PersonCollection.aspx" />
     <Content Include="Admin\PersonDetail.aspx" />
+    <None Include="Service References\ServiceHelloWorld\HelloWorld.disco" />
+    <None Include="Service References\ServiceHelloWorld\configuration91.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\configuration.svcinfo" />
+    <None Include="Service References\ServiceHelloWorld\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceEntityLookup\EntityLookupService.disco" />
+    <None Include="Service References\ServiceEntityLookup\configuration91.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\configuration.svcinfo" />
+    <None Include="Service References\ServiceEntityLookup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceExample.aspx" />
     <Content Include="UserControls\InstructorNavigationControl.ascx" />
+    <Content Include="UserControls\LookupTableNavigationControl.ascx" />
     <Content Include="UserControls\MessageBrokenRulesControl.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -135,6 +188,13 @@
     <Compile Include="Admin\EntityTypeDetail.aspx.designer.cs">
       <DependentUpon>EntityTypeDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FitnessClassArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FitnessClassCollection.aspx.cs">
       <DependentUpon>FitnessClassCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +208,13 @@
     </Compile>
     <Compile Include="Admin\FitnessClassDetail.aspx.designer.cs">
       <DependentUpon>FitnessClassDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GymLocationArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Instructors\ContactInfo.aspx.cs">
       <DependentUpon>ContactInfo.aspx</DependentUpon>
@@ -184,6 +251,27 @@
     <Compile Include="Admin\Instructors\InstructorList.aspx.designer.cs">
       <DependentUpon>InstructorList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityLookup.aspx.designer.cs">
+      <DependentUpon>EntityLookup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.designer.cs">
+      <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PersonCollection.aspx.cs">
       <DependentUpon>PersonCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,9 +286,17 @@
     <Compile Include="Admin\PersonDetail.aspx.designer.cs">
       <DependentUpon>PersonDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ScheduleArea\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Custom\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Custom\Utilities.cs" />
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,12 +322,36 @@
       <DependentUpon>Site2Column.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceEntityLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceHelloWorld\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceExample.aspx.designer.cs">
+      <DependentUpon>ServiceExample.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\InstructorNavigationControl.ascx.cs">
       <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\InstructorNavigationControl.ascx.designer.cs">
       <DependentUpon>InstructorNavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LookupTableNavigationControl.ascx.cs">
+      <DependentUpon>LookupTableNavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LookupTableNavigationControl.ascx.designer.cs">
+      <DependentUpon>LookupTableNavigationControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MessageBrokenRulesControl.ascx.cs">
       <DependentUpon>MessageBrokenRulesControl.ascx</DependentUpon>
@@ -257,6 +377,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceEntityLookup\" />
+    <WCFMetadataStorage Include="Service References\ServiceHelloWorld\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

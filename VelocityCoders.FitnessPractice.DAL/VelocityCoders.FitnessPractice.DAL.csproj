@@ -48,6 +48,7 @@
     <Compile Include="AppConfiguration.cs" />
     <Compile Include="EmailAddressDAL.cs" />
     <Compile Include="EmailDAL.cs" />
+    <Compile Include="EntityDAL.cs" />
     <Compile Include="EntityTypeDAL.cs" />
     <Compile Include="FitnessClassDAL.cs" />
     <Compile Include="HelperDAL.cs" />

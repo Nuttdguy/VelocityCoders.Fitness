@@ -15,11 +15,16 @@ namespace VelocityCoders.FitnessPratice.WebForm
 
         public int InstructorId
         {
-            get { return this.GetQueryStringNumber("InstructorId"); }
+            get { return GetQueryStringNumber("InstructorId"); }
+        }
+
+        public int EntityId
+        {
+            get { return GetQueryStringNumber("EntityId"); }
         }
 
         //=========    ERROR METHOD | AVAILABLE FOR ALL PAGES INHERITING BASEPAGE     ===================//
-        public void DisplayLocalMessageDisplayPageMessage(Label labelControl, string messageToDisplay)
+        public void DisplayPageMessage(Label labelControl, string messageToDisplay)
         {
             this.DisplayPageMessage(labelControl, messageToDisplay, false);
         }
@@ -30,6 +35,13 @@ namespace VelocityCoders.FitnessPratice.WebForm
                 labelControl.Text += messageToDisplay;
             else
                 labelControl.Text = messageToDisplay;
+        }
+
+        //=========   METHOD FOR BINDING MAIN-NAVIGATION IN 2 COLUMN MASTER   =========\\
+        public void SetMasterPageNavigation(MasterNavigation masterNavigationEnum)
+        {
+            MasterPages.Site2Column myMasterPage = (MasterPages.Site2Column)Page.Master;
+            myMasterPage.SelectedMasterPageNavigation = masterNavigationEnum;
         }
 
 

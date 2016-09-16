@@ -22,7 +22,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin
         private void BindEntityType()
         {
             EntityTypeCollectionList bindObject = new EntityTypeCollectionList();
-            bindObject = EntityTypeManager.GetCollection(EntityNames.EmployeeType, QuerySelectType.GetEntityType);
+            //bindObject = EntityTypeManager.GetCollection();
             
             // bindObject = EntityTypeDAL.GetCollection();
 

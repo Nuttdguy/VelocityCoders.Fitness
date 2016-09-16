@@ -16,7 +16,7 @@
 
       <table>
         <tr>
-          <td><label>FirstName: </label></td>
+          <td><label class="Required">FirstName: </label></td>
           <td><asp:TextBox runat="server" ID="txtFirstName" MaxLength="50" /></td>
         </tr>
         <tr>
@@ -24,7 +24,7 @@
           <td><asp:TextBox runat="server" ID="txtPreferredFirstName" MaxLength="50" /></td>
         </tr>
         <tr>
-          <td><label>Last Name:</label></td>
+          <td><label class="Required">Last Name:</label></td>
           <td><asp:TextBox runat="server" ID="txtLastName" /></td>
         </tr>
         <tr>

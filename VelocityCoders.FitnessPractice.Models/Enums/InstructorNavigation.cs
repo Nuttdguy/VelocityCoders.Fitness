@@ -38,4 +38,5 @@ namespace VelocityCoders.FitnessPractice.Models
         /// </summary>
         Locations
     }
+
 }

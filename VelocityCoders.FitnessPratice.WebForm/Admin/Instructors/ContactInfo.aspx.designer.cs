@@ -13,6 +13,15 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors {
     public partial class ContactInfo {
         
         /// <summary>
+        /// hidInstructorId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidInstructorId;
+        
+        /// <summary>
         /// hidEmailId control.
         /// </summary>
         /// <remarks>

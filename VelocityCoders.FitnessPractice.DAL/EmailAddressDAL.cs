@@ -12,7 +12,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region DELETE
         public static bool Delete(int emailId)
         {
-            int result = 0;
+            int result;
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
                 using (SqlCommand myCommand = new SqlCommand("usp_ExecuteEmail", myConnection))
@@ -21,9 +21,12 @@ namespace VelocityCoders.FitnessPractice.DAL
 
                     myCommand.Parameters.AddWithValue("@QueryId", (int)QueryExecuteType.DeleteItem);
                     myCommand.Parameters.AddWithValue("@EmailId", emailId);
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
 
                     myConnection.Open();
                     myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
                 }
                 myConnection.Close();
             }
@@ -51,7 +54,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myCommand.Parameters.AddWithValue("@QueryId", queryId);
                     myCommand.Parameters.AddWithValue("@EmailId", emailToSave.EmailId);
                     myCommand.Parameters.AddWithValue("@InstructorId", instructorId);
-                    //myCommand.Parameters.AddWithValue("@EntityTypeId", emailToSave.EmailType.EntityTypeId);
+                    myCommand.Parameters.AddWithValue("@EntityTypeId", emailToSave.EmailType.EntityTypeId);
 
                     if (emailToSave.EmailValue != null)
                         myCommand.Parameters.AddWithValue("@EmailAddress", emailToSave.EmailValue.ToString());

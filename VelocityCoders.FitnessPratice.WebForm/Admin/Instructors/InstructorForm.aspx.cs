@@ -14,10 +14,11 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         {
             if (!IsPostBack)
             {
-                this.BindInstructorNavigation();
-                this.BindEmployeeType();
+                SetMasterPageNavigation(MasterNavigation.Instructor);
+                BindInstructorNavigation();
+                BindEmployeeType();
 
-                this.CheckUpdate();
+                CheckUpdate();
             }
         }
 
@@ -165,7 +166,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
         private void BindEmployeeType()
         {
 
-            EntityTypeCollectionList bindEmployeeTypeDropDown = EntityTypeManager.GetCollection(EntityNames.EmployeeType, QuerySelectType.GetEntityType);
+            EntityTypeCollectionList bindEmployeeTypeDropDown = EntityTypeManager.GetCollection(EntityIdEnum.EmployeeType, SelectEnum.GetCollectionById);
 
             drpEmployeeType.DataSource = bindEmployeeTypeDropDown;
             drpEmployeeType.DataBind();

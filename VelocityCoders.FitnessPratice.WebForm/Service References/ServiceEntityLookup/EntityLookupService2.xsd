@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60546/EntityLookupService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" />
+  <xs:element name="GetEntityCollection">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="GetEntityCollectionResult" nillable="true" type="q1:EntityDTOCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="GetEntityTypeResult" nillable="true" type="q2:EntityTypeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityTypeCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityTypeCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="GetEntityTypeCollectionResult" nillable="true" type="q3:EntityTypeDTOCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntityType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="entityTypeToSave" nillable="true" type="q4:EntityTypeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntityTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

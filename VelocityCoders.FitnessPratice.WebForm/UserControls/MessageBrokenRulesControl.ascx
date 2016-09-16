@@ -23,4 +23,5 @@
   </asp:ListView>
 
 
-</asp:Panel>  
+</asp:Panel> 
+<div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div> 

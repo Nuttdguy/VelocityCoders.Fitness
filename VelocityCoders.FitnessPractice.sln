@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPratice.WebForm", "VelocityCoders.FitnessPratice.WebForm\VelocityCoders.FitnessPratice.WebForm.csproj", "{E2A2DA77-9BBE-42FA-9761-F69B8B1DD47A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A7247A5-04D4-4FDE-9E54-E399EA3DC330} = {2A7247A5-04D4-4FDE-9E54-E399EA3DC330}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPractice.Models", "VelocityCoders.FitnessPractice.Models\VelocityCoders.FitnessPractice.Models.csproj", "{50DB5F11-7769-4A57-AE79-F84D7F3BD64C}"
 EndProject
@@ -12,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML-Forms", "HTML-Forms\HTML-Forms.csproj", "{4A232590-E892-4BE2-B102-17E3A541432E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPractice.BLL", "VelocityCoders.FitnessPractice.BLL\VelocityCoders.FitnessPractice.BLL.csproj", "{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocityCoders.FitnessPractice.Services", "VelocityCoders.FitnessPractice.Services\VelocityCoders.FitnessPractice.Services.csproj", "{2A7247A5-04D4-4FDE-9E54-E399EA3DC330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,10 @@ Global
 		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9688D7C8-83A4-451D-BF27-8FB9A28C13A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7247A5-04D4-4FDE-9E54-E399EA3DC330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7247A5-04D4-4FDE-9E54-E399EA3DC330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7247A5-04D4-4FDE-9E54-E399EA3DC330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7247A5-04D4-4FDE-9E54-E399EA3DC330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

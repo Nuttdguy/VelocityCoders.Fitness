@@ -26,6 +26,18 @@ p {
     clear: left;
   }
 
+ a {
+    text-decoration: none;
+ }
+
+ a:hover {
+   text-decoration: underline;
+ }
+
+ li {
+   list-style: none;
+ }
+
 #Header,
 #Footer,
 #Subheader {
@@ -68,33 +80,60 @@ p {
   float: left;
   margin-left: 20px;
   margin-top: 50px;
+
+  background-color: #eaeaea;
+  border-radius: 4px 0 0 4px;
+  border: 0 1px 1px 1px solid #ccc;
 }
 
 #NavigationContainerContent {
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   background-color: #fff;
   border-radius: 4px;
+
 }
+
+#NavigationContainerContent ul {
+  margin: 0;
+  padding-left: 5px;
+}
+
+#NavigationContainerContent li {
+  list-style-type: none;
+  padding: 8px;
+}
+
+#NavigationContainerContent li.Selected {
+  border: 1px 0 1px 1px solid #ccc;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.1) 0 1px 0 0;
+  border-radius: 4px 0  0 4px;
+}
+
+#NavigationContainerContent a {
+  text-decoration: none;
+  color: #666;
+}
+
+#NavigationContainerContent a:hover {
+  color: #363636;
+  text-decoration: underline;
+}
+
 
 #BodyContainer {
   margin-left: 210px;
   margin-right: 20px;
 }
 
-#InstructorContainer {
-  padding: 20px;
-  background-color: #fff;
-  min-height: 200px;
+#InstructorContainer table {
+  width: 100%;
 }
 
-  #InstructorContainer table {
-    width: 100%;
-  }
-
-    #InstructorContainer table label {
-      float: right;
-      padding-right: 10px;
-    }
+#InstructorContainer table label {
+  float: right;
+  padding-right: 10px;
+}
 
 .Banner {
   text-align: center;
@@ -302,7 +341,7 @@ table {
 #GenericContainer {
   padding: 20px;
   background-color: #fff;
-  min-height: 200px;
+  min-height: 250px;
 }
 
 
@@ -335,3 +374,22 @@ table {
   box-shadow: rgba(0,0,0,0.1) 0 0 2px 0px;
 }
 
+/*  ADDED FROM E-06 DOCUMENT  */
+
+.SectionMessageArea {
+  float: right;
+  border: 1px 0px 1px 1px solid #ccc;
+  background: -webkit-linear-gradient(top, #f1f1f1, #d6d6d6);
+  margin: 0 -20px 0;
+  overflow: hidden;
+  padding: 6px;
+  border-radius: 4px 0 0 4px;
+}
+
+.Required {
+  color: #990000;
+  font-weight: bold;
+}
+
+
+/*==   ADDED C-03 WEB-SERVICES   ==*/
