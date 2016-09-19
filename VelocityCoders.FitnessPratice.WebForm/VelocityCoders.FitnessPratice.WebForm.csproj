@@ -88,6 +88,7 @@
     <Content Include="Admin\LookupTablesArea\Default.aspx" />
     <Content Include="Admin\LookupTablesArea\EntityLookup.aspx" />
     <Content Include="Admin\LookupTablesArea\EntityTypeLookup.aspx" />
+    <Content Include="Admin\LookupTablesArea\Test.aspx" />
     <Content Include="Admin\ScheduleArea\Default.aspx" />
     <Content Include="App_Themes\Main\FormControls.css" />
     <Content Include="App_Themes\Main\Images\background-banner.jpg" />
@@ -111,13 +112,29 @@
     <None Include="Service References\ServiceEntityLookup\EntityLookupService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ServiceEntityLookup\VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTOCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceEntity\EntityService.wsdl" />
+    <None Include="Service References\ServiceEntity\EntityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntity\EntityService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntity\EntityService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceEntity\EntityService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceEntity\VelocityCoders.FitnessPratice.WebForm.ServiceEntity.EntityDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceEntity\VelocityCoders.FitnessPratice.WebForm.ServiceEntity.EntityDTOCollection.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServiceHelloWorld\HelloWorld.wsdl" />
@@ -148,6 +165,13 @@
     <None Include="Service References\ServiceEntityLookup\configuration91.svcinfo" />
     <None Include="Service References\ServiceEntityLookup\configuration.svcinfo" />
     <None Include="Service References\ServiceEntityLookup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceEntity\EntityService.disco" />
+    <None Include="Service References\ServiceEntity\configuration91.svcinfo" />
+    <None Include="Service References\ServiceEntity\configuration.svcinfo" />
+    <None Include="Service References\ServiceEntity\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -272,6 +296,13 @@
     <Compile Include="Admin\LookupTablesArea\EntityTypeLookup.aspx.designer.cs">
       <DependentUpon>EntityTypeLookup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\LookupTablesArea\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LookupTablesArea\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PersonCollection.aspx.cs">
       <DependentUpon>PersonCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,6 +354,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceEntityLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceEntity\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -383,6 +419,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceEntityLookup\" />
+    <WCFMetadataStorage Include="Service References\ServiceEntity\" />
     <WCFMetadataStorage Include="Service References\ServiceHelloWorld\" />
   </ItemGroup>
   <PropertyGroup>

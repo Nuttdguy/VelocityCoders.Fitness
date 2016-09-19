@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Entity Type Lookup" Trace="true" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="EntityTypeLookup.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea.EntityTypeLookup" %>
+﻿<%@ Page Title="Entity Type Lookup" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="EntityTypeLookup.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea.EntityTypeLookup" %>
 <%@ Register TagPrefix="CustomVelocityCoders" TagName="LookupTablesNavigation" Src="~/UserControls/LookupTableNavigationControl.ascx" %>
 <%@ Register TagPrefix="CustomVelocityCoders" TagName="MessageArea" Src="~/UserControls/MessageBrokenRulesControl.ascx" %>
 
@@ -53,7 +53,6 @@
             <th>Lookup Name</th>
             <th>Display Name</th>
           </tr>
-        </table>
       </HeaderTemplate>
 
       <ItemTemplate>
@@ -79,7 +78,7 @@
       </AlternatingItemTemplate>
 
       <FooterTemplate>
-
+      </table>
       </FooterTemplate>
     </asp:Repeater>
 

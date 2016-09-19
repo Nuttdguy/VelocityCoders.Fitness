@@ -15,92 +15,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="EntityDTOCollection", Namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.D" +
-        "ataContracts", ItemName="EntityDTO")]
-    [System.SerializableAttribute()]
-    public class EntityDTOCollection : System.Collections.Generic.List<VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTO> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityDTO", Namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.D" +
-        "ataContracts")]
-    [System.SerializableAttribute()]
-    public partial class EntityDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DisplayNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EntityIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EntityNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DisplayName {
-            get {
-                return this.DisplayNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DisplayNameField, value) != true)) {
-                    this.DisplayNameField = value;
-                    this.RaisePropertyChanged("DisplayName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EntityId {
-            get {
-                return this.EntityIdField;
-            }
-            set {
-                if ((this.EntityIdField.Equals(value) != true)) {
-                    this.EntityIdField = value;
-                    this.RaisePropertyChanged("EntityId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EntityName {
-            get {
-                return this.EntityNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EntityNameField, value) != true)) {
-                    this.EntityNameField = value;
-                    this.RaisePropertyChanged("EntityName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityTypeDTO", Namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.D" +
         "ataContracts")]
     [System.SerializableAttribute()]
@@ -251,12 +165,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceEntityLookup.IEntityLookupService")]
     public interface IEntityLookupService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityLookupService/GetEntityCollection", ReplyAction="http://tempuri.org/IEntityLookupService/GetEntityCollectionResponse")]
-        VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection GetEntityCollection();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityLookupService/GetEntityCollection", ReplyAction="http://tempuri.org/IEntityLookupService/GetEntityCollectionResponse")]
-        System.Threading.Tasks.Task<VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection> GetEntityCollectionAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEntityLookupService/GetEntityType", ReplyAction="http://tempuri.org/IEntityLookupService/GetEntityTypeResponse")]
         VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTO GetEntityType(int entityTypeId);
         
@@ -313,14 +221,6 @@ namespace VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup {
         
         public EntityLookupServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection GetEntityCollection() {
-            return base.Channel.GetEntityCollection();
-        }
-        
-        public System.Threading.Tasks.Task<VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityDTOCollection> GetEntityCollectionAsync() {
-            return base.Channel.GetEntityCollectionAsync();
         }
         
         public VelocityCoders.FitnessPratice.WebForm.ServiceEntityLookup.EntityTypeDTO GetEntityType(int entityTypeId) {

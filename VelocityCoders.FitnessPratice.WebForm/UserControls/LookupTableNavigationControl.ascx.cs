@@ -62,6 +62,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
         }
         #endregion
 
+        #region ||=======  LOOKUP TABLE SELECTED | REDIRECT  =======||
         protected void LookupTables_Selected(object sender, EventArgs e)
         {
             if (drpSelectLookupTable.SelectedValue != "0")
@@ -69,7 +70,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
                 Response.Redirect(drpSelectLookupTable.SelectedValue + "Lookup.aspx");
             }
         }
-
+        #endregion
 
     }
 }

@@ -10,7 +10,7 @@
 namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea {
     
     
-    public partial class EntityLookup {
+    public partial class Test {
         
         /// <summary>
         /// HiddenEntityId control.
@@ -40,13 +40,13 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea {
         protected global::VelocityCoders.FitnessPratice.WebForm.UserControls.MessageBrokenRulesControl customMessageArea;
         
         /// <summary>
-        /// EntityNameTableRow control.
+        /// txtEntityId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow EntityNameTableRow;
+        protected global::System.Web.UI.WebControls.TextBox txtEntityId;
         
         /// <summary>
         /// txtEntityName control.
@@ -58,66 +58,21 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea {
         protected global::System.Web.UI.WebControls.TextBox txtEntityName;
         
         /// <summary>
-        /// EntityDisplayNameTableRow control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow EntityDisplayNameTableRow;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// txtEntityDisplayName control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEntityDisplayName;
-        
-        /// <summary>
-        /// EntityDescriptionTableRow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow EntityDescriptionTableRow;
-        
-        /// <summary>
-        /// txtEntityDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEntityDescription;
-        
-        /// <summary>
-        /// SaveButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveButton;
-        
-        /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
-        
-        /// <summary>
-        /// rptLookupList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptLookupList;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

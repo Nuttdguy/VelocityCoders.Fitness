@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60546/EntityService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" />
+  <xs:element name="GetEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="GetEntityResult" nillable="true" type="q1:EntityDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityCollection">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="GetEntityCollectionResult" nillable="true" type="q2:EntityDTOCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VelocityCoders.FitnessPractice.Services.DataContracts" minOccurs="0" name="entityToSave" nillable="true" type="q3:EntityDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

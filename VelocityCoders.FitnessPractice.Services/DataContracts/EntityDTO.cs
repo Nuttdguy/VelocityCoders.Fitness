@@ -21,5 +21,7 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
         [DataMember]
         public string DisplayName { get; set; }
 
+        [DataMember]
+        public string Description { get; set; }
     }
 }

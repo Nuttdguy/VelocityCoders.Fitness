@@ -17,11 +17,11 @@ namespace VelocityCoders.FitnessPractice.Services
     {
 
         #region SECTION 1 ||=======  GET  =======||
-        public EntityDTOCollection GetEntityCollection()
-        {
-            EntityCollectionList entityCollection = EntityManager.GetCollection();
-            return HydrateEntityDTO(entityCollection);
-        }
+        //public EntityDTOCollection GetEntityCollection()
+        //{
+        //    EntityCollectionList entityCollection = EntityManager.GetCollection();
+        //    return HydrateEntityDTO(entityCollection);
+        //}
 
         public EntityTypeDTO GetEntityType(int entityTypeId)
         {
@@ -57,7 +57,7 @@ namespace VelocityCoders.FitnessPractice.Services
             }
             else
                 throw new FaultException<EntityLookupServiceFault>(
-                    new EntityLookupServiceFault("EntityTypeId wsa not valid."), "Validation failed");
+                    new EntityLookupServiceFault("EntityTypeId was not valid."), "Validation failed");
         }
 
         public void SaveEntityType(EntityTypeDTO entityTypeToSave)
@@ -95,36 +95,36 @@ namespace VelocityCoders.FitnessPractice.Services
 
         #region SECTION 3 ||=======  HYDRATE OBJECTS  =======||
 
-        #region COLLECTION ENTITY BO TO DTO
-        private EntityDTOCollection HydrateEntityDTO(EntityCollectionList entityCollection)
-        {
-            EntityDTOCollection tempCollection = new EntityDTOCollection();
+        //#region COLLECTION ENTITY BO TO DTO
+        //private EntityDTOCollection HydrateEntityDTO(EntityCollectionList entityCollection)
+        //{
+        //    EntityDTOCollection tempCollection = new EntityDTOCollection();
 
-            if (entityCollection != null && entityCollection.Count > 0)
-            {
-                foreach (Entity item in entityCollection)
-                {
-                    if (!string.IsNullOrEmpty(item.EntityName))
-                    {
-                        EntityDTO temp = new EntityDTO()
-                        {
-                            EntityId = item.EntityId,
-                            EntityName = item.EntityName
-                        };
+        //    if (entityCollection != null && entityCollection.Count > 0)
+        //    {
+        //        foreach (Entity item in entityCollection)
+        //        {
+        //            if (!string.IsNullOrEmpty(item.EntityName))
+        //            {
+        //                EntityDTO temp = new EntityDTO()
+        //                {
+        //                    EntityId = item.EntityId,
+        //                    EntityName = item.EntityName
+        //                };
 
-                        if (!string.IsNullOrEmpty(item.DisplayName))
-                            temp.DisplayName = item.DisplayName;
+        //                if (!string.IsNullOrEmpty(item.DisplayName))
+        //                    temp.DisplayName = item.DisplayName;
 
-                        tempCollection.Add(temp);
-                    }
-                    else
-                        tempCollection.Add(new EntityDTO { EntityId = item.EntityId });
-                }
-            }
-            return tempCollection;
-        }
+        //                tempCollection.Add(temp);
+        //            }
+        //            else
+        //                tempCollection.Add(new EntityDTO { EntityId = item.EntityId });
+        //        }
+        //    }
+        //    return tempCollection;
+        //}
 
-        #endregion
+        //#endregion
 
         #region ITEM ENTITY TYPE BO TO DTO
         private EntityTypeDTO HydrateEntityTypeDTO(EntityType entityType)

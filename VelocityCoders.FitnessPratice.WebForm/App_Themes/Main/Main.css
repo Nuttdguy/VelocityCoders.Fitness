@@ -217,7 +217,7 @@ p {
 /* STYLES ADDED C-08 */
 
 tr:first-of-type {
-  font-weight: 700;
+  /*font-weight: 700;*/
   /*text-decoration: underline;*/
   color: rgba(0,0,0,.8);
   height: 40px;
@@ -232,12 +232,12 @@ tr {
   text-align: center;
 }
 
-  tr:not(:first-of-type):hover {
+  /*tr:not(:first-of-type):hover {
     background-color: #ACB2B8;
-  }
+  }*/
 
 td:last-child {
-  padding-right: 12px;
+  padding-right: 0;
 }
 
 td {
@@ -258,9 +258,6 @@ table {
 
 /* STYLES ADDED C-08 | Part III */
 
-.PageMessage {
-  display: none;
-}
 
 .ShowPageMessage {
   display: block;
@@ -281,37 +278,28 @@ table {
   float: right;
 }
 
-.ContainerBar {
-  background: #f4f3f1;
-  border-bottom: 1px solid #e6e3e1;
-  border-top: 1px solid #e6e3e1;
-  line-height: 16px;
-  margin: 15px -20px 0;
-  overflow: hidden;
-  padding: 12px 20px;
-}
 
 
 /* ADD REPEATER FROM REPEATER DOCUMENT */
 
 .ListStyle {
-  border: solid 1px #d6d6d6;
+  border: solid 1px #ACB2B8;
   border-spacing: 0;
   border-collapse: separate;
 }
 
-  .ListStyle th {
-    border: 0 1px 1px 1px solid #d6d6d6;
-    padding: 5px;
-    background: linear-gradient(top, #f1f1f1, #d6d6d6);
-  }
+.ListStyle th {
+  border: 0 1px 1px 1px solid #d6d6d6;
+  padding: 5px;
+  background: linear-gradient(top, #f1f1f1, #d6d6d6);
+}
 
-  .ListStyle td {
-    padding: 5px;
-  }
+.ListStyle td {
+  padding: 5px;
+}
 
 .ListStyleAlternative {
-  background: #f4f3f1;
+  background: #ACB2B8;
   border-bottom: 1px solid #e6e3e1;
   border-top: 1px solid #e6e3e1;
 }

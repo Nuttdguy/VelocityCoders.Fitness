@@ -8,32 +8,24 @@ using VelocityCoders.FitnessPractice.Services.Faults;
 namespace VelocityCoders.FitnessPractice.Services.ServiceContracts
 {
     [ServiceContract]
-    interface IEntityLookupService
+    interface IEntityService
     {
-        //#region Entity
-        //[OperationContract]
-        //EntityDTOCollection GetEntityCollection();
-
-        //#endregion
-
-        #region EntityType
+        #region Entity
 
         [OperationContract]
-        EntityTypeDTO GetEntityType(int entityTypeId);
+        EntityDTO GetEntity(int entityId);
 
         [OperationContract]
-        EntityTypeDTOCollection GetEntityTypeCollection(int entityId);
+        EntityDTOCollection GetEntityCollection();
 
         [OperationContract]
         [FaultContract(typeof(EntityLookupServiceFault))]
-        void DeleteEntityType(int entityTypeId);
+        void DeleteEntity(int entityId);
 
         [OperationContract]
         [FaultContract(typeof(EntityLookupServiceFault))]
-        void SaveEntityType(EntityTypeDTO entityTypeToSave);
+        void SaveEntity(EntityDTO entityToSave);
 
         #endregion
-
-
     }
 }

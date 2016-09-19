@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="VelocityCoders.FitnessPractice.Services.EntityService" CodeBehind="EntityService.svc.cs" %>

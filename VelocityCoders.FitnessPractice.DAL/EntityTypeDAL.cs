@@ -148,7 +148,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                 using (SqlCommand myCommand = new SqlCommand("usp_GetEntityType", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
-                    myCommand.Parameters.AddWithValue("@QueryId", QuerySelectType.GetEntityType);
+                    myCommand.Parameters.AddWithValue("@QueryId", SelectEnum.GetCollectionById);
                     myCommand.Parameters.AddWithValue("@EntityId", entityId);
 
                     myConnection.Open();
@@ -224,9 +224,12 @@ namespace VelocityCoders.FitnessPractice.DAL
 
                     myCommand.Parameters.AddWithValue("@QueryId", ExecuteEnum.DeleteItem);
                     myCommand.Parameters.AddWithValue("@EntityTypeId", entityTypeId);
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
 
                     myConnection.Open();
                     myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
 
                 }
                 myConnection.Close();

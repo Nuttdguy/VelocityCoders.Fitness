@@ -15,10 +15,10 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea
         protected void Page_Load(object sender, EventArgs e)
         {
             SetMasterPageNavigation(MasterNavigation.LookupTables);
-            BindNavigation();
-
+            
             if (!IsPostBack)
             {
+                BindNavigation();
                 BindEntityDropDown();
 
                 if (EntityId > 0)
@@ -84,6 +84,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea
                     DisplayLocalMessage(ex.Message + " " + ex.Detail.ErrorMessage);
                 }
             }
+
         }
         #endregion
 
@@ -142,9 +143,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea
         #region ||=======  BIND ENTITY DROP DOWN LIST  =======||
         private void BindEntityDropDown()
         {
-            using (ServiceEntityLookup.EntityLookupServiceClient entityLookupService = new ServiceEntityLookup.EntityLookupServiceClient())
+            using (ServiceEntity.EntityServiceClient entityService = new ServiceEntity.EntityServiceClient())
             {
-                ServiceEntityLookup.EntityDTOCollection entityCollection = entityLookupService.GetEntityCollection();
+                ServiceEntity.EntityDTOCollection entityCollection = entityService.GetEntityCollection();
                 if (entityCollection != null && entityCollection.Count > 0)
                 {
                     drpEntity.DataSource = entityCollection;
@@ -306,7 +307,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.LookupTablesArea
         protected void Save_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
+            {
                 ProcessForm();
+            }
         }
         #endregion
 

@@ -31,6 +31,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                         }
                         myReader.Close();
                     }
+                    myConnect.Close();
                 }
             }
             return tmpItem;

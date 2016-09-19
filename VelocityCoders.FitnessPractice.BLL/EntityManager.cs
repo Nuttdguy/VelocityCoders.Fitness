@@ -12,7 +12,10 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
 
         #region SECTION 1 ||=======  GET ITEM  =======||
-
+        public static Entity GetItem(int entityId)
+        {
+            return EntityDAL.GetItem(entityId);
+        }
 
         #endregion
 
@@ -28,15 +31,33 @@ namespace VelocityCoders.FitnessPractice.BLL
         #region ||=======  [METHOD] GET COLLECTION | BY ENTITY-ID  =======||
         public static EntityCollectionList GetCollection(int entityId)
         {
-            EntityCollectionList entityTypeCollection = EntityDAL.GetCollection(entityId);
-            return entityTypeCollection;
+            EntityCollectionList entityCollection = EntityDAL.GetCollection(entityId);
+            return entityCollection;
         }
 
         #endregion
 
         #endregion
 
+        #region SECTION 3 ||=======  DELETE ITEM  =======||
+        #region ||=======  DELETE ENTITY ITEM | BY ENTITY-ID  =======||
+        public static bool Delete(int entityId)
+        {
+            return EntityDAL.DeleteItem(entityId);
+        }
+        #endregion
 
+        #endregion
 
+        #region SECTION 4 ||=======  SAVE ITEM  =======||
+
+        #region ||========  SAVE ENTITY ITEM  =======||
+        public static void Save(int entityId, Entity entity)
+        {
+            EntityDAL.Save(entityId, entity);
+        }
+        #endregion
+
+        #endregion
     }
 }
