@@ -48,9 +48,12 @@
     <Compile Include="EntityManager.cs" />
     <Compile Include="EntityTypeManager.cs" />
     <Compile Include="FitnessClassManager.cs" />
+    <Compile Include="GymManager.cs" />
     <Compile Include="InstructorManager.cs" />
+    <Compile Include="LocationManager.cs" />
     <Compile Include="PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VelocityCoders.FitnessPractice.DAL\VelocityCoders.FitnessPractice.DAL.csproj">

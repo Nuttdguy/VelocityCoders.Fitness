@@ -42,4 +42,19 @@ namespace VelocityCoders.FitnessPractice.Models
 
     }
 
+    public class GymCollection : BaseCollection<Gym>
+    {
+
+    }
+
+    public class LocationCollection : BaseCollection<Location>
+    {
+
+    }
+
+    public class StateCollection : BaseCollection<State>
+    {
+
+    }
+
 }
