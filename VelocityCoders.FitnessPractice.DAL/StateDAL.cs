@@ -12,7 +12,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region ||=======  GET ITEM | BY STATE-ID =======||
         public static State GetItem(int stateId)
         {
-            State tmpItem = null;
+            State tmpItem = new State();
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -25,13 +25,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myConnection.Open();
                     using (SqlDataReader myReader = myCommand.ExecuteReader())
                     {
-                        if (myReader.HasRows)
+                        if (myReader.Read())
                         {
-                            tmpItem = new State();
-                            while (myReader.Read())
-                            {
-                                tmpItem = FillDataRecord(myReader);
-                            }
+                            tmpItem = FillDataRecord(myReader);
                         }
                         myReader.Close();
                     }

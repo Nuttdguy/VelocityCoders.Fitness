@@ -42,12 +42,14 @@
   <ItemGroup>
     <Compile Include="Collections\BaseCollection.cs" />
     <Compile Include="Collections\ClassCollection.cs" />
+    <Compile Include="Common\BaseId.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="EmailAddress.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntityType.cs" />
     <Compile Include="Enums\EntityIdEnum.cs" />
     <Compile Include="Enums\ExecuteEnum.cs" />
+    <Compile Include="Enums\GymLocationNavigation.cs" />
     <Compile Include="Enums\InstructorNavigation.cs" />
     <Compile Include="Enums\LookupTableNavigation.cs" />
     <Compile Include="Enums\MasterNavigation.cs" />

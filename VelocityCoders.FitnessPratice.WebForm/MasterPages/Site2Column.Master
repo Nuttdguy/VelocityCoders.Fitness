@@ -8,54 +8,59 @@
 
 <head runat="server">
 
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+		<title></title>
+		<asp:ContentPlaceHolder ID="head" runat="server">
+		</asp:ContentPlaceHolder>
 
 </head>
 
 <body>
 
-    <form id="form1" runat="server">
+		<form id="form1" runat="server">
+		<div id="Container cf"> <!-- MAIN CONTAINER -->
 
-      <div>
-        <div id="Header">
-          <img src="../../App_Themes/Main/Images/header-logo.png" />
-        </div>
+			<div>
+				<div id="Header">
+					<img src="../../App_Themes/Main/Images/header-logo.png" />
+				</div>
 
-        <div id="Subheader" >
-          <div class="Banner">
-            <h1 class="BannerText">Fitness Schedule Administration</h1>
-            <p>Tool to manage your fitness schedule application.</p>
-          </div>
-        </div>
+				<div id="Subheader" >
+					<div class="Banner">
+						<div class="SubheaderTxtContainer">
+							<h1 class="BannerText">Fitness Schedule Administration</h1>
+							<p>Tool to manage your fitness schedule application.</p>
+						</div>
+					</div>
+				</div>
 
-        <div id="Container"> <!-- MAIN CONTAINER -->
-          <div id="NavigationContainer">
-            <div id="NavigationContainerContent"> Left Navigation Placeholder </div>
-              <ul>
-                <li runat="server" id="Instructor" ><a href="../Instructors/InstructorList.aspx">Instructor</a></li>
-                <li runat="server" id="GymLocation" ><a href="../GymLocationArea">Gym Location</a></li>
-                <li runat="server" id="FitnessClass"><a href="../FitnessClassArea">Fitness Class</a></li>
-                <li runat="server" id="Schedule"><a href="../ScheduleArea">Schedule</a></li>
-                <li runat="server" id="LookupTables"><a href="../LookupTablesArea">Lookup Tables</a></li>
-              </ul>
-          </div>
+				<div id="BodyContainer" >
 
-          <div id="BodyContainer" >
-            <div id="BodyContainerContent" >
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
-        
-                </asp:ContentPlaceHolder>
-              </div>
-            </div>
-          </div>
-        <div id="Footer">
-          <div>&copy; 2016 - Velocity Coders </div>
-        </div>
+					<div id="NavigationContainer">
+						<div id="NavigationContainerContent">
+							<ul>
+								<li runat="server" id="Instructor" ><a href="../Instructors/InstructorList.aspx">Instructor</a></li>
+								<li runat="server" id="GymLocation" ><a href="../GymLocationArea">Gym Location</a></li>
+								<li runat="server" id="FitnessClass"><a href="../FitnessClassArea">Fitness Class</a></li>
+								<li runat="server" id="Schedule"><a href="../ScheduleArea">Schedule</a></li>
+								<li runat="server" id="LookupTables"><a href="../LookupTablesArea">Lookup Tables</a></li>
+							</ul>
+						</div>
+					</div>
 
-      </div>
-    </form>
+					<div id="BodyContainerContent" >
+								<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" > </asp:ContentPlaceHolder>
+						</div>
+
+				</div>
+
+				<div id="Footer">
+					<div>&copy; 2016 - Velocity Coders </div>
+				</div>
+
+			</div>
+
+		</div>
+		</form>
 
 </body>
 </html>

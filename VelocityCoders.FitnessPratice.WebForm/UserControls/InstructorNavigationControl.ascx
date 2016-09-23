@@ -3,6 +3,7 @@
 
 <div id="ContainerSubHeader" class="SubheaderNavigation borderRadiusTop" >
   <asp:Label runat="server" ID="UCMessage" />
+
   <div class="SmallPadding">
     <asp:ListView runat="server" ID="InstructorNavigationList" ItemPlaceholderID="InstructorNavigationPlaceholder">
       
@@ -22,4 +23,5 @@
 
     </asp:ListView>
   </div>
+
 </div>

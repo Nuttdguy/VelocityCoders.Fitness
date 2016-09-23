@@ -8,6 +8,7 @@ namespace VelocityCoders.FitnessPractice.Models
 {
     public class Location
     {
+
         public int LocationId { get; set; }
         public string LocationName { get; set; }
         public string Address01 { get; set; }
@@ -15,6 +16,13 @@ namespace VelocityCoders.FitnessPractice.Models
         public string City { get; set; } 
         public int ZipCode { get; set; }
         public int ZipCodePlusFour { get; set; }
+
+        public State State { get; set; }
+
+        public Location()
+        {
+            this.State = new State();
+        }
 
     }
 }

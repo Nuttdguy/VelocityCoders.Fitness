@@ -12,7 +12,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region ||=======  GET ITEM | BY GYM-ID  =======||
         public static Gym GetItem(int gymId)
         {
-            Gym tmpItem = null;
+            Gym tmpItem = new Gym();
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -25,13 +25,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myConnection.Open();
                     using (SqlDataReader myReader = myCommand.ExecuteReader())
                     {
-                        if (myReader.HasRows)
+                        if (myReader.Read())
                         {
-                            tmpItem = new Gym();
-                            while (myReader.Read())
-                            {
-                                tmpItem = FillDataRecord(myReader);
-                            }
+                            tmpItem = FillDataRecord(myReader);
                         }
                         myReader.Close();
                     }
@@ -83,12 +79,12 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region SECTION 3 ||=======  INSERT OR UPDATE ITEM  =======||
 
         #region ||========  INSERT ITEM | BY GYM-ID  =======||
-        public static int SaveItem(int gymId, Gym gymObj)
+        public static int SaveItem(Gym gymObj)
         {
             int result;
             ExecuteEnum queryId = ExecuteEnum.InsertItem;
 
-            if (queryId > 0)
+            if (gymObj.GymId > 0)
                 queryId = ExecuteEnum.UpdateItem;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
@@ -99,11 +95,11 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myCommand.Parameters.AddWithValue("@QueryId", queryId);
 
                     if (gymObj.GymId > 0)
-                        myCommand.Parameters.AddWithValue("@LocationId", gymObj.GymId);
-                    if (!string.IsNullOrEmpty(gymObj.Name))
-                        myCommand.Parameters.AddWithValue("@Name", gymObj.Name);
-                    if (!string.IsNullOrEmpty(gymObj.Abbreviation))
-                        myCommand.Parameters.AddWithValue("@Abbreviation", gymObj.Abbreviation);
+                        myCommand.Parameters.AddWithValue("@GymId", gymObj.GymId);
+                    if (!string.IsNullOrEmpty(gymObj.GymName))
+                        myCommand.Parameters.AddWithValue("@GymName", gymObj.GymName);
+                    if (!string.IsNullOrEmpty(gymObj.GymAbbreviation))
+                        myCommand.Parameters.AddWithValue("@GymAbbreviation", gymObj.GymAbbreviation);
                     if (!string.IsNullOrEmpty(gymObj.Description))
                         myCommand.Parameters.AddWithValue("@Description", gymObj.Description);
                     if (!string.IsNullOrEmpty(gymObj.Website))
@@ -127,7 +123,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region SECTION 4 ||=======  DELETE ITEM  =======||
 
         #region ||=======  DELETE ITEM | BY GYM-ID  =======||
-        public static int DeleteItem(int gymId)
+        public static bool DeleteItem(int gymId)
         {
             int deletedItem;
 
@@ -147,7 +143,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                 }
                 myConnection.Close();
             }
-            return deletedItem;
+            return deletedItem > 0;
         }
         #endregion
 
@@ -160,10 +156,10 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             tmpObj.GymId = myReader.GetInt32(myReader.GetOrdinal("GymId"));
 
-            if (!myReader.IsDBNull(myReader.GetOrdinal("Name")))
-                tmpObj.Name = myReader.GetString(myReader.GetOrdinal("Name"));
-            if (!myReader.IsDBNull(myReader.GetOrdinal("Abbreviation")))
-                tmpObj.Abbreviation = myReader.GetString(myReader.GetOrdinal("Abbreviation"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("GymName")))
+                tmpObj.GymName = myReader.GetString(myReader.GetOrdinal("GymName"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("GymAbbreviation")))
+                tmpObj.GymAbbreviation = myReader.GetString(myReader.GetOrdinal("GymAbbreviation"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("Description")))
                 tmpObj.Description = myReader.GetString(myReader.GetOrdinal("Description"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("Website")))

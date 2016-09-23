@@ -8,9 +8,26 @@ namespace VelocityCoders.FitnessPractice.BLL
     {
         #region SECTION 1 ||=======  GET ITEM  =======||
         #region ||=======  GET ITEM | BY LOCATION-ID  =======||
-        public static Location GetItem(int stateId)
+        public static Location GetItem(int locationId)
         {
-            return LocationDAL.GetItem(stateId);
+            BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
+
+            if (locationId <= 0)
+            {
+                saveBrokenRules.Add("Error", "Invalid ID: " + locationId.ToString());
+                throw new BLLException("There was an error", saveBrokenRules);
+            }
+
+            Location item = LocationDAL.GetItem(locationId);
+
+            if (item == null)
+            {
+                saveBrokenRules.Add("Error", "Nothing was returned ");
+                throw new BLLException("There was an error", saveBrokenRules);
+            }
+
+            return item;
+
         }
         #endregion
         #endregion
@@ -28,7 +45,25 @@ namespace VelocityCoders.FitnessPractice.BLL
         #region ||=======  INSERT OR UPDATE ITEM | BY LOCATION-ID  =======||
         public static int SaveItem(int locationId, Location locationObj)
         {
-            return LocationDAL.SaveItem(locationId, locationObj);
+            BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
+
+            if (locationId <= 0)
+            {
+                saveBrokenRules.Add("Error", "Invalid ID: " + locationId);
+                throw new BLLException("Error", saveBrokenRules);
+            }
+
+            int item = LocationDAL.SaveItem(locationId, locationObj);
+
+            if (item < 0)
+            {
+                saveBrokenRules.Add("Error", "Save was unsuccessful" + locationId);
+                throw new BLLException("Error", saveBrokenRules);
+            }
+            else
+            {
+                return item;
+            }
         }
         #endregion
         #endregion
@@ -37,7 +72,18 @@ namespace VelocityCoders.FitnessPractice.BLL
         #region ||=======  DELETE ITEM | BY LOCATION-ID  =======||
         public static int DeleteItem(int locationId)
         {
-            return LocationDAL.DeleteItem(locationId);
+            BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
+
+            if (locationId <= 0)
+            {
+                saveBrokenRules.Add("Error", "Invalid ID: " + locationId + " nothing to delete. ");
+                throw new BLLException("Error", saveBrokenRules);
+            }
+            else
+            {
+                return LocationDAL.DeleteItem(locationId);
+            }
+
         }
         #endregion
         #endregion

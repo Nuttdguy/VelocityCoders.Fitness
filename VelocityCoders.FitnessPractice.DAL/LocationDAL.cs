@@ -12,7 +12,7 @@ namespace VelocityCoders.FitnessPractice.DAL
         #region ||=======  GET ITEM | BY LOCATION-ID =======||
         public static Location GetItem(int locationId)
         {
-            Location tmpItem = null;
+            Location tmpItem = new Location();
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -25,13 +25,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myConnection.Open();
                     using (SqlDataReader myReader = myCommand.ExecuteReader())
                     {
-                        if (myReader.HasRows)
+                        if (myReader.Read())
                         {
-                            tmpItem = new Location();
-                            while (myReader.Read())
-                            {
-                                tmpItem = FillDataRecord(myReader);
-                            }
+                            tmpItem = FillDataRecord(myReader);
                         }
                         myReader.Close();
                     }

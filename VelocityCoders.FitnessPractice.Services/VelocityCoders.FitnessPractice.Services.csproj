@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Routing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -63,6 +66,7 @@
   <ItemGroup>
     <Content Include="EntityLookupService.svc" />
     <Content Include="EntityService.svc" />
+    <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -71,6 +75,7 @@
     <Compile Include="DataContracts\Collections\ServiceCollection.cs" />
     <Compile Include="DataContracts\EntityDTO.cs" />
     <Compile Include="DataContracts\EntityTypeDTO.cs" />
+    <Compile Include="DataContracts\GymDTO.cs" />
     <Compile Include="EntityLookupService.svc.cs">
       <DependentUpon>EntityLookupService.svc</DependentUpon>
     </Compile>
@@ -78,9 +83,14 @@
       <DependentUpon>EntityService.svc</DependentUpon>
     </Compile>
     <Compile Include="Faults\EntityLookupServiceFault.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="REST\GymService.cs" />
     <Compile Include="ServiceContracts\IEntityService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceContracts\IEntityLookupService.cs" />
+    <Compile Include="ServiceContracts\IGymService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

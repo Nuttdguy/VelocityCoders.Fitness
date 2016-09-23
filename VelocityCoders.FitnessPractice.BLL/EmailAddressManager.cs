@@ -6,7 +6,6 @@ namespace VelocityCoders.FitnessPractice.BLL
     public static class EmailAddressManager
     {
 
-
         public static int Save(int instructorId, EmailAddress emailToSave)
         {
             BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
