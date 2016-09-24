@@ -10,18 +10,20 @@ namespace VelocityCoders.FitnessPractice.Models
     {
 
         public int LocationId { get; set; }
+        public Gym Gym { get; set; }
         public string LocationName { get; set; }
         public string Address01 { get; set; }
         public string Address02 { get; set; }
         public string City { get; set; } 
-        public int ZipCode { get; set; }
-        public int ZipCodePlusFour { get; set; }
+        public string ZipCode { get; set; }
+        public string ZipCodePlusFour { get; set; }
 
         public State State { get; set; }
 
         public Location()
         {
             this.State = new State();
+            this.Gym = new Gym() { };
         }
 
     }

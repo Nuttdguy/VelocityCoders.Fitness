@@ -76,6 +76,8 @@
     <Compile Include="DataContracts\EntityDTO.cs" />
     <Compile Include="DataContracts\EntityTypeDTO.cs" />
     <Compile Include="DataContracts\GymDTO.cs" />
+    <Compile Include="DataContracts\LocationDTO.cs" />
+    <Compile Include="DataContracts\StateDTO.cs" />
     <Compile Include="EntityLookupService.svc.cs">
       <DependentUpon>EntityLookupService.svc</DependentUpon>
     </Compile>
@@ -87,10 +89,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="REST\GymService.cs" />
+    <Compile Include="REST\LocationService.cs" />
     <Compile Include="ServiceContracts\IEntityService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceContracts\IEntityLookupService.cs" />
     <Compile Include="ServiceContracts\IGymService.cs" />
+    <Compile Include="ServiceContracts\ILocationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -39,7 +39,7 @@
 						<div id="NavigationContainerContent">
 							<ul>
 								<li runat="server" id="Instructor" ><a href="../Instructors/InstructorList.aspx">Instructor</a></li>
-								<li runat="server" id="GymLocation" ><a href="../GymLocationArea">Gym Location</a></li>
+								<li runat="server" id="GymLocation" ><a href="../GymLocationArea/GymManage.aspx">Gym Location</a></li>
 								<li runat="server" id="FitnessClass"><a href="../FitnessClassArea">Fitness Class</a></li>
 								<li runat="server" id="Schedule"><a href="../ScheduleArea">Schedule</a></li>
 								<li runat="server" id="LookupTables"><a href="../LookupTablesArea">Lookup Tables</a></li>

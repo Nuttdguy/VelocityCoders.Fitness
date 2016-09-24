@@ -14,12 +14,12 @@ namespace VelocityCoders.FitnessPractice.Models
         public string Description { get; set; }
         public string Website { get; set; }
 
-        public LocationCollection Locations { get; set; }
+        //public LocationCollection Locations { get; set; }
 
-        public Gym()
-        {
-            this.Locations = new LocationCollection();
-        }
+        //public Gym()
+        //{
+        //    this.Locations = new LocationCollection();
+        //}
 
     }
 }

@@ -66,6 +66,26 @@ namespace VelocityCoders.FitnessPractice.BLL
             }
         }
         #endregion
+
+        #region ||=======  INSERT OR UPDATE ITEM | BY LOCATION-ID  =======||
+        public static int SaveItem(Location locationObj)
+        {
+            BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
+
+
+            int item = LocationDAL.SaveItem(locationObj);
+
+            if (item < 0)
+            {
+                saveBrokenRules.Add("Error", "Save was unsuccessful");
+                throw new BLLException("Error", saveBrokenRules);
+            }
+            else
+            {
+                return item;
+            }
+        }
+        #endregion
         #endregion
 
         #region SECTION 4 ||=======  DELETE ITEM  =======||

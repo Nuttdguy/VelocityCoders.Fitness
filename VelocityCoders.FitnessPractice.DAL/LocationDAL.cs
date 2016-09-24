@@ -112,7 +112,55 @@ namespace VelocityCoders.FitnessPractice.DAL
 
         #region SECTION 3 ||=======  INSERT OR UPDATE ITEM  =======||
 
-        #region ||========  INSERT ITEM | BY LOCATION-ID =======||  //== ADD RETURN RESULT
+        #region ||========  INSERT ITEM | BY LOCATION-OBJ  =======||
+        public static int SaveItem(Location locationObj)
+        {
+            int result;
+            ExecuteEnum queryId = ExecuteEnum.InsertItem;
+
+            if (queryId > 0)
+                queryId = ExecuteEnum.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteLocation", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+
+                    if (locationObj.LocationId > 0)
+                        myCommand.Parameters.AddWithValue("@LocationId", locationId);
+                    if (locationObj.Gym.GymId > 0)
+                        myCommand.Parameters.AddWithValue("@GymId", locationObj.Gym.GymId);
+                    if (locationObj.State.StateId > 0)
+                        myCommand.Parameters.AddWithValue("@StateId", locationObj.State.StateId);
+                    if (!string.IsNullOrEmpty(locationObj.LocationName))
+                        myCommand.Parameters.AddWithValue("@LocationName", locationObj.LocationName);
+                    if (!string.IsNullOrEmpty(locationObj.Address01))
+                        myCommand.Parameters.AddWithValue("@Address01", locationObj.Address01);
+                    if (!string.IsNullOrEmpty(locationObj.Address02))
+                        myCommand.Parameters.AddWithValue("@Address02", locationObj.Address02);
+                    if (!string.IsNullOrEmpty(locationObj.City))
+                        myCommand.Parameters.AddWithValue("@City", locationObj.City);
+                    if (!string.IsNullOrEmpty(locationObj.ZipCode))
+                        myCommand.Parameters.AddWithValue("@ZipCode", locationObj.ZipCode);
+                    if (!string.IsNullOrEmpty(locationObj.ZipCodePlusFour))
+                        myCommand.Parameters.AddWithValue("@ZipCodePlusFour", locationObj.ZipCodePlusFour);
+
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+                }
+                myConnection.Close();
+            }
+            return result;
+        }
+        #endregion
+
+        #region ||========  INSERT ITEM | BY LOCATION-ID =======||
         public static int SaveItem(int locationId, Location locationObj)
         {
             int result;
@@ -130,6 +178,10 @@ namespace VelocityCoders.FitnessPractice.DAL
 
                     if (locationObj.LocationId > 0)
                         myCommand.Parameters.AddWithValue("@LocationId", locationId);
+                    if (locationObj.Gym.GymId > 0)
+                        myCommand.Parameters.AddWithValue("@GymId", locationObj.Gym.GymId);
+                    if (locationObj.State.StateId > 0)
+                        myCommand.Parameters.AddWithValue("@StateId", locationObj.State.StateId);
                     if (!string.IsNullOrEmpty(locationObj.LocationName))
                         myCommand.Parameters.AddWithValue("@LocationName", locationObj.LocationName);
                     if (!string.IsNullOrEmpty(locationObj.Address01))
@@ -138,9 +190,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                         myCommand.Parameters.AddWithValue("@Address02", locationObj.Address02);
                     if (!string.IsNullOrEmpty(locationObj.City))
                         myCommand.Parameters.AddWithValue("@City", locationObj.City);
-                    if (locationObj.ZipCode != 0 || !(locationObj.ZipCode < 0))
+                    if (!string.IsNullOrEmpty(locationObj.ZipCode))
                         myCommand.Parameters.AddWithValue("@ZipCode", locationObj.ZipCode);
-                    if (locationObj.ZipCodePlusFour != 0 || !(locationObj.ZipCodePlusFour < 0))
+                    if (!string.IsNullOrEmpty(locationObj.ZipCodePlusFour))
                         myCommand.Parameters.AddWithValue("@ZipCodePlusFour", locationObj.ZipCodePlusFour);
 
                     myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
@@ -186,7 +238,6 @@ namespace VelocityCoders.FitnessPractice.DAL
         #endregion
 
         #endregion
-
         #region SECTION 5 ||=======  HYDRATE OBJECT  =======||
         public static Location FillDataRecord(IDataReader myReader)
         {
@@ -194,6 +245,10 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             tmpObj.LocationId = myReader.GetInt32(myReader.GetOrdinal("LocationId"));
 
+            if (!myReader.IsDBNull(myReader.GetOrdinal("GymName")))
+                tmpObj.Gym.GymName = myReader.GetString(myReader.GetOrdinal("GymName"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("GymId")))
+                tmpObj.Gym.GymId = myReader.GetInt32(myReader.GetOrdinal("GymId"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("LocationName")))
                 tmpObj.LocationName = myReader.GetString(myReader.GetOrdinal("LocationName"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("Address01")))
@@ -204,15 +259,14 @@ namespace VelocityCoders.FitnessPractice.DAL
             if (!myReader.IsDBNull(myReader.GetOrdinal("City")))
                 tmpObj.City = myReader.GetString(myReader.GetOrdinal("City"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("ZipCode")))
-                tmpObj.ZipCode = myReader.GetInt32(myReader.GetOrdinal("ZipCode"));
+                tmpObj.ZipCode = myReader.GetString(myReader.GetOrdinal("ZipCode"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("ZipCodePlusFour")))
-                tmpObj.ZipCodePlusFour = myReader.GetInt32(myReader.GetOrdinal("ZipCodePlusFour"));
+                tmpObj.ZipCodePlusFour = myReader.GetString(myReader.GetOrdinal("ZipCodePlusFour"));
 
             return tmpObj;
         }
 
         #endregion
-
 
     }
 }

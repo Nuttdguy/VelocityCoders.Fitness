@@ -40,6 +40,15 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea {
         protected global::VelocityCoders.FitnessPratice.WebForm.UserControls.MessageBrokenRulesControl customMessageArea;
         
         /// <summary>
+        /// drpGymName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpGymName;
+        
+        /// <summary>
         /// txtLocationName control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea {
         protected global::System.Web.UI.WebControls.Button SaveButton;
         
         /// <summary>
+        /// ViewButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ViewButton;
+        
+        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>
@@ -112,12 +130,12 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea {
         protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
-        /// rptGymList control.
+        /// rptLocationList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptGymList;
+        protected global::System.Web.UI.WebControls.Repeater rptLocationList;
     }
 }

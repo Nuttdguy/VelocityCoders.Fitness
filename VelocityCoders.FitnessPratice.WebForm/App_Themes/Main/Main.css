@@ -56,6 +56,7 @@ p {
 #Header {
   height: 65px;
   background-color: #fff;
+  box-shadow: -1px 2px 3px rgba(0,0,0,.4);
 }
 
 #Subheader {
@@ -65,8 +66,8 @@ p {
   background-image: url('Images/5976_Life Fitness 1_tcm87-21053.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  max-width: 980px;
-  height: 250px;
+  max-width: 978px;
+  height: 360px;
 }
 
 #BodyContainer {
@@ -74,7 +75,7 @@ p {
   display: table;
   min-height: 20vh;
   height: 100%;
-  margin-top: 240px;
+  margin-top: 340px;
   z-index: 0;
   background-color: rgba(0,0,0,1);
 }
@@ -102,11 +103,13 @@ p {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 35px;
-  line-height: 35px;
+  font-size: 16px;
+  height: 44px;
+  line-height: 44px;
   text-align: center;
   color: #ACB2B8;
   border-top: 1px solid #ACB2B8;
+  background-color: rgba(233, 88, 34, 0.95)
 }
 
  /*============================================
@@ -141,8 +144,8 @@ p {
   text-align: center;
   width: 100%;
   height: 100%;
-  max-width: 980px;
-  padding-top: 55px;
+  max-width: 978px;
+  padding-top: 95px;
 }
 
  /*.SubheaderTxtContainer {
@@ -335,6 +338,12 @@ td label {
   font-size: 16px;
 }
 
+
+/*#BodyContainer td:first-of-type,
+#BodyContainer th:first-of-type {
+  width: 140px!important;
+}*/
+
 #BodyContainerContent tr:nth-child(1n+2) {
   color: #0c0f0d;
 }
@@ -447,7 +456,7 @@ table {
 }
 
 .ListStyle td {
-  padding: 5px;
+  padding: 5px 0 5px 5px;
 }
 
 .ListStyleAlternative {
