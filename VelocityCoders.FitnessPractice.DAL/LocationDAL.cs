@@ -129,7 +129,7 @@ namespace VelocityCoders.FitnessPractice.DAL
                     myCommand.Parameters.AddWithValue("@QueryId", queryId);
 
                     if (locationObj.LocationId > 0)
-                        myCommand.Parameters.AddWithValue("@LocationId", locationId);
+                        myCommand.Parameters.AddWithValue("@LocationId", locationObj.LocationId);
                     if (locationObj.Gym.GymId > 0)
                         myCommand.Parameters.AddWithValue("@GymId", locationObj.Gym.GymId);
                     if (locationObj.State.StateId > 0)
