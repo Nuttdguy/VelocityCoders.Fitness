@@ -20,28 +20,63 @@ namespace VelocityCoders.FitnessPratice.WebForm
 
             //rptCollection.DataSource = gymCollection;
             //rptCollection.DataBind();
+            //repeaterControl();
+            
 
         }
 
-        protected void submitBtn_Click(object sender, EventArgs e)
+        protected void GetLocationItemBtn_Click(object sender, EventArgs e)
         {
-            Gym tmp = new Gym();
+            //int id = txtLocationId.Text.ToInt();
+            //Location tmpItem = LocationManager.GetItem(id);
 
-            tmp.GymName = txtGymName.Text;
-            tmp.GymId = txtGymId.Text.ToInt();
-
-            GymManager.SaveItem(tmp);
-
+            //lblLocationName.Text = tmpItem.LocationName;
+            
         }
 
-
-        protected void deleteBtn_Click(object sender, EventArgs e)
+        protected void repeaterControl()
         {
+            LocationCollection tmpList = new LocationCollection();
 
-            int gymId = txtGymId.Text.ToInt();
+            tmpList = LocationManager.GetCollection();
 
-            GymManager.DeleteItem(gymId);
-
+            //rptCollection.DataSource = tmpList;
+            //rptCollection.DataBind();
         }
+
+        protected void SaveLocationBtn_Click(object sender, EventArgs e)
+        {
+            Location tmpItem = new Location();
+            tmpItem.LocationId = txtSaveLocationId.Text.ToInt();
+            tmpItem.LocationName = txtLocationName.Text;
+
+            LocationManager.SaveItem(tmpItem);
+        }
+
+        protected void deleteLocationBtn_Click(object sender, EventArgs e)
+        {
+            int id = txtSaveLocationId.Text.ToInt();
+            LocationManager.DeleteItem(id);
+        }
+
+        //protected void submitBtn_Click(object sender, EventArgs e)
+        //{
+        //    Gym tmp = new Gym();
+
+        //    tmp.GymName = txtGymName.Text;
+        //    tmp.GymId = txtGymId.Text.ToInt();
+
+        //    GymManager.SaveItem(tmp);
+
+        //}
+
+        //protected void deleteBtn_Click(object sender, EventArgs e)
+        //{
+
+        //    int gymId = txtGymId.Text.ToInt();
+
+        //    GymManager.DeleteItem(gymId);
+
+        //}
     }
 }

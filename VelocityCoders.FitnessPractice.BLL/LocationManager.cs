@@ -72,8 +72,8 @@ namespace VelocityCoders.FitnessPractice.BLL
         {
             BrokenRuleCollection saveBrokenRules = new BrokenRuleCollection();
 
-
             int item = LocationDAL.SaveItem(locationObj);
+
 
             if (item < 0)
             {

@@ -16,9 +16,9 @@ namespace VelocityCoders.FitnessPractice.Services.REST
         #region SECTION 4 ||=======  GET ITEM  =======||
 
         #region ||=======  GET GYM LOCATION ITEM | BY GYM-ID  =======||
-        public LocationDTO GetItem(int GymId)
+        public LocationDTO GetItem(string GymId)
         {
-            Location tmpItem = LocationManager.GetItem(GymId);
+            Location tmpItem = LocationManager.GetItem(GymId.ToInt());
             return LocationToDTO(tmpItem);
         }
         #endregion
@@ -43,7 +43,6 @@ namespace VelocityCoders.FitnessPractice.Services.REST
         public LocationDTO SaveItem(LocationDTO locationDTO)
         {
             int gymId = LocationManager.SaveItem(DTOToLocation(locationDTO));
-
             Location tmpItem = LocationManager.GetItem(gymId);
             return LocationToDTO(tmpItem);
         }
@@ -54,13 +53,14 @@ namespace VelocityCoders.FitnessPractice.Services.REST
         #region SECTION 4 ||=======  DELETE  =======||
 
         #region ||=======  DELETE GYM LOCATION | BY LOCATION-ID  =======||
-        public int DeleteItem(int locationId)
+        public int DeleteItem(string locationId)
         {
-            return LocationManager.DeleteItem(locationId);  
+            return LocationManager.DeleteItem(locationId.ToInt());  
         }
         #endregion
 
         #endregion
+
 
         #region SECTION 5 ||=======  HYDRATE OBJECT  =======||
 
@@ -119,6 +119,11 @@ namespace VelocityCoders.FitnessPractice.Services.REST
         }
 
         #endregion
+
+        #endregion
+
+        #region SECTION 6 ||=======  ID HELPER METHOD  ======||
+
 
         #endregion
     }

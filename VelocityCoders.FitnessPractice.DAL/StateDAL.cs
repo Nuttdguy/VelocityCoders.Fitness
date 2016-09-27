@@ -16,7 +16,7 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
-                using (SqlCommand myCommand = new SqlCommand("usp_GetItem", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("usp_GetState", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     myCommand.Parameters.AddWithValue("@QueryId", SelectEnum.GetItem);
@@ -50,7 +50,7 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
-                using (SqlCommand myCommand = new SqlCommand("usp_GetCollection", myConnection))
+                using (SqlCommand myCommand = new SqlCommand("usp_GetState", myConnection))
                 {
                     myCommand.CommandType = CommandType.StoredProcedure;
                     myCommand.Parameters.AddWithValue("@QueryId", SelectEnum.GetCollection);
@@ -85,12 +85,12 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             tmpObj.StateId = myReader.GetInt32(myReader.GetOrdinal("StateId"));
 
-            if (!myReader.IsDBNull(myReader.GetOrdinal("Name")))
-                tmpObj.Name = myReader.GetString(myReader.GetOrdinal("Name"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("StateName")))
+                tmpObj.StateName = myReader.GetString(myReader.GetOrdinal("StateName"));
             if (!myReader.IsDBNull(myReader.GetOrdinal("ShortName")))
                 tmpObj.ShortName = myReader.GetString(myReader.GetOrdinal("ShortName"));
-            if (!myReader.IsDBNull(myReader.GetOrdinal("Abbreviation")))
-                tmpObj.Abbreviation = myReader.GetString(myReader.GetOrdinal("Abbreviation"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("StateAbbreviation")))
+                tmpObj.StateAbbreviation = myReader.GetString(myReader.GetOrdinal("StateAbbreviation"));
 
             return tmpObj;
         }

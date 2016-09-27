@@ -85,6 +85,15 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea {
         protected global::System.Web.UI.WebControls.TextBox txtCity;
         
         /// <summary>
+        /// drpStateName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpStateName;
+        
+        /// <summary>
         /// txtZipCode control.
         /// </summary>
         /// <remarks>
@@ -112,22 +121,13 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea {
         protected global::System.Web.UI.WebControls.Button SaveButton;
         
         /// <summary>
-        /// ViewButton control.
+        /// CancelButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ViewButton;
-        
-        /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button CancelButton;
         
         /// <summary>
         /// rptLocationList control.

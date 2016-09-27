@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Location" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="LocationManage.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea.LocationManage" %>
+﻿<%@ Page Title="Manage Location" MaintainScrollPositionOnPostback="true" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="LocationManage.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.GymLocationArea.LocationManage" %>
 
 <%@ Register TagPrefix="CustomVelocityCoders" TagName="GymLocationNavigation" Src="~/UserControls/GymLocationNavigationControl.ascx" %>
 <%@ Register TagPrefix="CustomVelocityCoders" TagName="MessageArea" Src="~/UserControls/MessageBrokenRulesControl.ascx" %>
@@ -19,8 +19,7 @@
 			<tr>
 				<td><label>Gym Name</label></td>
 				<td>
-					<asp:DropDownList runat="server" ID="drpGymName" MaxLength="100"  DataValueField='GymId' DataTextField='GymName'>
-					</asp:DropDownList>
+					<asp:DropDownList runat="server" ID="drpGymName" MaxLength="100"  DataValueField='GymId' DataTextField='GymName' OnSelectedIndexChanged="drpGymName_SelectedIndexChanged" AutoPostBack="true" />
 				</td>
 			</tr>
 			<tr>
@@ -40,6 +39,12 @@
 				<td><asp:TextBox runat="server" ID="txtCity" MaxLength="100" /></td>
 			</tr>
 			<tr>
+				<td><label>State</label></td>
+				<td>
+					<asp:DropDownList runat="server" ID="drpStateName" MaxLength="100"  DataValueField='StateId' DataTextField='StateName' />
+				</td>
+			</tr>
+			<tr>
 				<td><label>Zip Code</label></td>
 				<td><asp:TextBox runat="server" ID="txtZipCode" MaxLength="5"/></td>
 			</tr>
@@ -50,17 +55,16 @@
 		</table>
 
 		<div class="ContainerBar" >
-			<asp:Button runat="server" Text="Add Location" ID="SaveButton" />
-			<asp:Button runat="server" Text="View Locations" ID="ViewButton" OnClick="ViewButton_Click" />
+			<asp:Button runat="server" Text="Add Location" ID="SaveButton" OnClick="SaveButton_Click" />
 
 			<span class="FloatRight" >
-				<asp:Button runat="server" ID="btnCancel" Text="Cancel" Visible="false" />
+				<asp:Button runat="server" ID="CancelButton" Text="Cancel" Visible="false" OnClick="CancelButton_Click"/>
 			</span>
 		</div>
 
 	</div>
 
-	<asp:Repeater runat="server" ID="rptLocationList"  >
+	<asp:Repeater runat="server" ID="rptLocationList" OnItemDataBound="LocationList_OnItemDataBound"  >
 		
 		<HeaderTemplate>
 			<div id="GenericContainer">
@@ -70,6 +74,7 @@
 						<th>Gym Name:</th>
 						<th>Address 01</th>
 						<th>City</th>
+						<th>State</th>
 						<th>Zip Code</th>
 					</tr>
 		</HeaderTemplate>
@@ -77,13 +82,14 @@
 		<ItemTemplate>
 			<tr>
 				<td class="CenterText">
-					<asp:LinkButton runat="server" ID="EditBtn" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="LocationBtn_Command" CommandName="Edit" />
-					<asp:LinkButton runat="server" ID="DeleteBtn" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
-						commandName="DeleteBtn" />
+					<asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="LocationBtn_Command" CommandName="Edit" />
+					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
+						commandName="Delete" />
 				</td>
 				<td class="CenterText"><%# Eval("Gym.GymName") %></td>
 				<td class="CenterText"><%# Eval("Address01") %></td>
 				<td class="CenterText"><%# Eval("City") %></td>
+				<td class="CenterText"><%# Eval("State.StateName") %></td>
 				<td class="CenterText"><%# Eval("ZipCode") %></td>
 			</tr>
 		</ItemTemplate>
@@ -91,13 +97,14 @@
 		<AlternatingItemTemplate>
 			<tr>
 				<td class="CenterText ListStyleAlternative">
-					<asp:LinkButton runat="server" ID="EditBtn" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="LocationBtn_Command" CommandName="Edit" />
-					<asp:LinkButton runat="server" ID="DeleteBtn" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
-						commandName="DeleteBtn" />
+					<asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="LocationBtn_Command" CommandName="Edit" />
+					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
+						commandName="Delete" />
 				</td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("Gym.GymName") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("Address01") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("City") %></td>
+				<td class="CenterText ListStyleAlternative"><%# Eval("State.StateName") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("ZipCode") %></td>
 			</tr>
 

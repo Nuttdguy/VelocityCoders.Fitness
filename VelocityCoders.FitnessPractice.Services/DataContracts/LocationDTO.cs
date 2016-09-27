@@ -33,10 +33,10 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
         [DataMember]
         public string ZipCodePlusFour { get; set; }
 
-        private void Location()
+        public LocationDTO()
         {
-            this.GymDTO = new GymDTO() { };
-            this.StateDTO = new StateDTO() { };
+            this.GymDTO = new GymDTO();
+            this.StateDTO = new StateDTO();
         }
 
     }

@@ -10,30 +10,30 @@ namespace VelocityCoders.FitnessPractice.Services.ServiceContracts
     {
 
         #region ||=======  GET LOCATION DTO COLLECTION |  ALL  =======||
-        [Description("Get the collection of Gym locations")]
+        [Description("Get the collection of Gym location")]
         [OperationContract]
-        [WebGet(UriTemplate = "/Gym/Location", ResponseFormat = WebMessageFormat.Json)]
+        [WebGet(UriTemplate = "/Location/", ResponseFormat = WebMessageFormat.Json)]
         LocationDTOCollection GetCollection();
         #endregion
 
         #region ||=======  GET LOCATION DTO ITEM | BY GYM-ID  =======||
         [Description("Get Location item by GymId")]
         [OperationContract]
-        [WebGet(UriTemplate = "/Gym/Location/{GymId}", ResponseFormat = WebMessageFormat.Json)]
-        LocationDTO GetItem(int GymId);
+        [WebGet(UriTemplate = "/Location/{GymId}", ResponseFormat = WebMessageFormat.Json)]
+        LocationDTO GetItem(string GymId);
         #endregion
 
         #region ||=======  DELETE LOCATION DTO ITEM | BY LOCATION-ID  =======||
         [Description("Delete Location by LocationId")]
         [OperationContract]
-        [WebInvoke(UriTemplate = "/Gym/Location/{LocationId}", Method = "DELETE", RequestFormat = WebMessageFormat.Json)]
-        int DeleteItem(int locationId);
+        [WebInvoke(UriTemplate = "/Location/{LocationId}", Method = "DELETE", RequestFormat = WebMessageFormat.Json)]
+        int DeleteItem(string locationId);
         #endregion
 
         #region ||=======  SAVE LOCATION DTO ITEM  =======||
         [Description("Save Location ")]
         [OperationContract]
-        [WebInvoke(UriTemplate = "/Gym/Location", Method = "PUT", RequestFormat = WebMessageFormat.Json)]
+        [WebInvoke(UriTemplate = "/Location/", Method = "PUT", RequestFormat = WebMessageFormat.Json)]
         LocationDTO SaveItem(LocationDTO locationDTO);
         #endregion
 

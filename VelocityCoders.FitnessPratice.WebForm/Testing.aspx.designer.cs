@@ -13,39 +13,39 @@ namespace VelocityCoders.FitnessPratice.WebForm {
     public partial class Testing {
         
         /// <summary>
-        /// txtGymName control.
+        /// txtLocationName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGymName;
+        protected global::System.Web.UI.WebControls.TextBox txtLocationName;
         
         /// <summary>
-        /// submitBtn control.
+        /// txtSaveLocationId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitBtn;
+        protected global::System.Web.UI.WebControls.TextBox txtSaveLocationId;
         
         /// <summary>
-        /// txtGymId control.
+        /// SaveLocationBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGymId;
+        protected global::System.Web.UI.WebControls.Button SaveLocationBtn;
         
         /// <summary>
-        /// DeleteBtn control.
+        /// deleteLocationBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteBtn;
+        protected global::System.Web.UI.WebControls.Button deleteLocationBtn;
     }
 }

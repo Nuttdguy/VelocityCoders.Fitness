@@ -6,5 +6,6 @@ public enum GymLocationNavigation
     Gym,
     FitnessClass,
     Schedule,
-    LookupTables
+    LookupTables,
+    Location
 }

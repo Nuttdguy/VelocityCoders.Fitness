@@ -118,7 +118,7 @@ namespace VelocityCoders.FitnessPractice.DAL
             int result;
             ExecuteEnum queryId = ExecuteEnum.InsertItem;
 
-            if (queryId > 0)
+            if (locationObj.LocationId > 0)
                 queryId = ExecuteEnum.UpdateItem;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
@@ -143,9 +143,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                     if (!string.IsNullOrEmpty(locationObj.City))
                         myCommand.Parameters.AddWithValue("@City", locationObj.City);
                     if (!string.IsNullOrEmpty(locationObj.ZipCode))
-                        myCommand.Parameters.AddWithValue("@ZipCode", locationObj.ZipCode);
+                        myCommand.Parameters.AddWithValue("@ZipCode", locationObj.ZipCode.ToInt());
                     if (!string.IsNullOrEmpty(locationObj.ZipCodePlusFour))
-                        myCommand.Parameters.AddWithValue("@ZipCodePlusFour", locationObj.ZipCodePlusFour);
+                        myCommand.Parameters.AddWithValue("@ZipCodePlusFour", locationObj.ZipCodePlusFour.ToInt());
 
                     myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
 
@@ -238,11 +238,13 @@ namespace VelocityCoders.FitnessPractice.DAL
         #endregion
 
         #endregion
+
+
         #region SECTION 5 ||=======  HYDRATE OBJECT  =======||
         public static Location FillDataRecord(IDataReader myReader)
         {
             Location tmpObj = new Location();
-
+            int tmp;
             tmpObj.LocationId = myReader.GetInt32(myReader.GetOrdinal("LocationId"));
 
             if (!myReader.IsDBNull(myReader.GetOrdinal("GymName")))
@@ -258,10 +260,22 @@ namespace VelocityCoders.FitnessPractice.DAL
 
             if (!myReader.IsDBNull(myReader.GetOrdinal("City")))
                 tmpObj.City = myReader.GetString(myReader.GetOrdinal("City"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("StateName")))
+                tmpObj.State.StateName = myReader.GetString(myReader.GetOrdinal("StateName"));
+            if (!myReader.IsDBNull(myReader.GetOrdinal("StateId")))
+            {
+                tmpObj.State.StateId = myReader.GetInt32(myReader.GetOrdinal("StateId"));             
+            }
             if (!myReader.IsDBNull(myReader.GetOrdinal("ZipCode")))
-                tmpObj.ZipCode = myReader.GetString(myReader.GetOrdinal("ZipCode"));
+            {
+                tmp = myReader.GetInt32(myReader.GetOrdinal("ZipCode"));
+                tmpObj.ZipCode = tmp.ToString();
+            }
             if (!myReader.IsDBNull(myReader.GetOrdinal("ZipCodePlusFour")))
-                tmpObj.ZipCodePlusFour = myReader.GetString(myReader.GetOrdinal("ZipCodePlusFour"));
+            {
+                tmp = myReader.GetInt32(myReader.GetOrdinal("ZipCodePlusFour"));
+                tmpObj.ZipCodePlusFour = tmp.ToString();
+            }
 
             return tmpObj;
         }
