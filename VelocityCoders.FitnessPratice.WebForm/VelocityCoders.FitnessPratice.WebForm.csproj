@@ -393,6 +393,7 @@
     </Compile>
     <Compile Include="Models\GymDTO.cs" />
     <Compile Include="Models\LocationDTO.cs" />
+    <Compile Include="Models\StateDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceEntityLookup\Reference.cs">
       <AutoGen>True</AutoGen>

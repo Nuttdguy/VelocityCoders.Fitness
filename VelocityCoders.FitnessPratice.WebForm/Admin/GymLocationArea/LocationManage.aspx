@@ -23,11 +23,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td><label>Location Name</label></td>
+				<td><label >Location Name</label></td>
 				<td><asp:TextBox runat="server" ID="txtLocationName"  MaxLength="100" /></td>
 			</tr>
 			<tr>
-				<td><label>Address 1</label></td>
+				<td><label class="Required">Address 1*</label></td>
 				<td><asp:TextBox runat="server" ID="txtAddress01" MaxLength="100" /></td>
 			</tr>
 			<tr>
@@ -35,17 +35,17 @@
 				<td><asp:TextBox runat="server" ID="txtAddress02" MaxLength="100" /></td>
 			</tr>
 			<tr>
-				<td><label>City</label></td>
+				<td><label class="Required">City*</label></td>
 				<td><asp:TextBox runat="server" ID="txtCity" MaxLength="100" /></td>
 			</tr>
 			<tr>
-				<td><label>State</label></td>
+				<td><label class="Required">State*</label></td>
 				<td>
 					<asp:DropDownList runat="server" ID="drpStateName" MaxLength="100"  DataValueField='StateId' DataTextField='StateName' />
 				</td>
 			</tr>
 			<tr>
-				<td><label>Zip Code</label></td>
+				<td><label class="Required">Zip Code*</label></td>
 				<td><asp:TextBox runat="server" ID="txtZipCode" MaxLength="5"/></td>
 			</tr>
 			<tr>
@@ -71,7 +71,7 @@
 				<table class="ListStyle BorderRadiusAll" >
 					<tr>
 						<th>&nbsp;</th>
-						<th>Gym Name:</th>
+						<th>Gym Name</th>
 						<th>Address 01</th>
 						<th>City</th>
 						<th>State</th>
@@ -86,10 +86,10 @@
 					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
 						commandName="Delete" />
 				</td>
-				<td class="CenterText"><%# Eval("Gym.GymName") %></td>
+				<td class="CenterText"><%# Eval("GymDTO.GymName") %></td>
 				<td class="CenterText"><%# Eval("Address01") %></td>
 				<td class="CenterText"><%# Eval("City") %></td>
-				<td class="CenterText"><%# Eval("State.StateName") %></td>
+				<td class="CenterText"><%# Eval("StateDTO.StateName") %></td>
 				<td class="CenterText"><%# Eval("ZipCode") %></td>
 			</tr>
 		</ItemTemplate>
@@ -101,10 +101,10 @@
 					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="LocationBtn_Command"
 						commandName="Delete" />
 				</td>
-				<td class="CenterText ListStyleAlternative"><%# Eval("Gym.GymName") %></td>
+				<td class="CenterText ListStyleAlternative"><%# Eval("GymDTO.GymName") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("Address01") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("City") %></td>
-				<td class="CenterText ListStyleAlternative"><%# Eval("State.StateName") %></td>
+				<td class="CenterText ListStyleAlternative"><%# Eval("StateDTO.StateName") %></td>
 				<td class="CenterText ListStyleAlternative"><%# Eval("ZipCode") %></td>
 			</tr>
 

@@ -19,4 +19,7 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
 
     [CollectionDataContract(Name = "LocationDTOCollection")]
     public class LocationDTOCollection : Collection<LocationDTO> { };
+
+    [CollectionDataContract(Name = "StateDTOCollection")]
+    public class StateDTOCollection : Collection<StateDTO> { };
 }

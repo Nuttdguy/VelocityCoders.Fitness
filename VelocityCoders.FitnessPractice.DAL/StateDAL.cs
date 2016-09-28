@@ -78,6 +78,78 @@ namespace VelocityCoders.FitnessPractice.DAL
 
         #endregion
 
+        #region SECTION 3 ||=======  INSERT OR UPDATE ITEM  =======||
+
+        #region ||========  INSERT ITEM | BY STATE-ID =======||
+        public static int SaveItem(State stateObj)
+        {
+            int result = 0;
+            ExecuteEnum queryId = ExecuteEnum.InsertItem;
+
+            if (stateObj.StateId > 0)
+                queryId = ExecuteEnum.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteState", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+
+                    if (stateObj.StateId > 0)
+                        myCommand.Parameters.AddWithValue("@StateId", stateObj.StateId);
+                    if (!string.IsNullOrEmpty(stateObj.StateName))
+                        myCommand.Parameters.AddWithValue("@StateName", stateObj.StateName);
+                    if (!string.IsNullOrEmpty(stateObj.StateAbbreviation))
+                        myCommand.Parameters.AddWithValue("@StateAbbreviation", stateObj.StateAbbreviation);
+                    if (!string.IsNullOrEmpty(stateObj.ShortName))
+                        myCommand.Parameters.AddWithValue("@ShortName", stateObj.ShortName);
+
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+                }
+                myConnection.Close();
+            }
+            return result;
+        }
+        #endregion
+
+        #endregion
+
+        #region SECTION 4 ||=======  DELETE ITEM  =======||
+
+        #region ||========  DELETE ITEM | BY STATE-ID  =======||
+        public static int DeleteItem(int stateId)
+        {
+            int deletedItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteState", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", ExecuteEnum.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@StateId", stateId);
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    deletedItem = (int)myCommand.Parameters["@ReturnValue"].Value;
+                }
+                myConnection.Close();
+            }
+            return deletedItem;
+        }
+        #endregion
+
+        #endregion
+
+
         #region SECTION 3 ||=======  HYDRATE OBJECT  =======||
         public static State FillDataRecord(IDataReader myReader)
         {

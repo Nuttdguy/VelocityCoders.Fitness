@@ -13,7 +13,7 @@ namespace VelocityCoders.FitnessPractice.Services.REST
     public class LocationService : ILocationService
     {
 
-        #region SECTION 4 ||=======  GET ITEM  =======||
+        #region SECTION 1 ||=======  GET ITEM  =======||
 
         #region ||=======  GET GYM LOCATION ITEM | BY GYM-ID  =======||
         public LocationDTO GetItem(string GymId)
@@ -25,7 +25,7 @@ namespace VelocityCoders.FitnessPractice.Services.REST
 
         #endregion
 
-        #region SECTION 4 ||=======  GET COLLECTION  =======||
+        #region SECTION 2 ||=======  GET COLLECTION  =======||
 
         #region ||=======  GET GYM LOCATION COLLECTION | ALL  =======||
         public LocationDTOCollection GetCollection()
@@ -37,7 +37,7 @@ namespace VelocityCoders.FitnessPractice.Services.REST
 
         #endregion
 
-        #region SECTION 4 ||=======  SAVE  =======||
+        #region SECTION 3 ||=======  SAVE  =======||
 
         #region ||=======  SAVE GYM LOCATION  =======||
         public LocationDTO SaveItem(LocationDTO locationDTO)
@@ -71,8 +71,10 @@ namespace VelocityCoders.FitnessPractice.Services.REST
 
             tmpObj.LocationId = locationDTO.LocationId;
             tmpObj.Gym.GymId = locationDTO.GymDTO.GymId;
+            tmpObj.Gym.GymName = locationDTO.GymDTO.GymName;
             tmpObj.LocationName = locationDTO.LocationName;
             tmpObj.State.StateId = locationDTO.StateDTO.StateId;
+            tmpObj.State.StateName = locationDTO.StateDTO.StateName;
             tmpObj.Address01 = locationDTO.Address01;
             tmpObj.Address02 = locationDTO.Address02;
             tmpObj.City = locationDTO.City;
@@ -90,7 +92,9 @@ namespace VelocityCoders.FitnessPractice.Services.REST
 
             tmpObj.LocationId = location.LocationId;
             tmpObj.GymDTO.GymId = location.Gym.GymId;
+            tmpObj.GymDTO.GymName = location.Gym.GymName;
             tmpObj.StateDTO.StateId = location.State.StateId;
+            tmpObj.StateDTO.StateName = location.State.StateName;
             tmpObj.LocationName = location.LocationName;
             tmpObj.Address01 = location.Address01;
             tmpObj.Address02 = location.Address02;

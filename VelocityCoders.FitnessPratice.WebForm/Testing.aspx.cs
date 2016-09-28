@@ -59,6 +59,26 @@ namespace VelocityCoders.FitnessPratice.WebForm
             LocationManager.DeleteItem(id);
         }
 
+        //===============
+
+
+        protected void SaveStateBtn_Click(object sender, EventArgs e)
+        {
+            State tmpItem = new State();
+            tmpItem.StateId = txtStateId.Text.ToInt();
+            tmpItem.StateName = txtStateName.Text;
+
+            StateManager.SaveItem(tmpItem);
+        }
+
+        protected void deleteStateBtn_Click(object sender, EventArgs e)
+        {
+            int id = txtStateId.Text.ToInt();
+            StateManager.DeleteItem(id);
+        }
+
+
+
         //protected void submitBtn_Click(object sender, EventArgs e)
         //{
         //    Gym tmp = new Gym();

@@ -17,11 +17,11 @@
 
 
     <ItemTemplate>
-      <li><%# Eval("PropertyName") %>: <%# Eval("Message") %></li>
+      <li><%# Eval("PropertyName") %> &#42 &nbsp;<%# Eval("Message") %></li>
     </ItemTemplate>
 
   </asp:ListView>
 
 
 </asp:Panel> 
-<div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div> 
+<%--<div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div> --%>

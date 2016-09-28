@@ -47,6 +47,29 @@ namespace VelocityCoders.FitnessPractice.BLL
             return StateDAL.GetCollection();
         }
         #endregion
+
+        #endregion
+
+        #region SECTION 3 ||=======  DELETE ITEM =======||
+
+        #region ||=======  DELETE ITEM | BY STATE-ID =======||
+        public static int DeleteItem(int stateId)
+        {
+            return StateDAL.DeleteItem(stateId);
+        }
+        #endregion
+
+        #endregion
+
+        #region SECTION 4 ||=======  SAVE ITEM  =======||
+
+        #region ||=======  SAVE ITEM | BY STATE-ID  =======||
+        public static int SaveItem(State stateObj)
+        {
+            return StateDAL.SaveItem(stateObj);
+        }
+        #endregion
+
         #endregion
 
     }

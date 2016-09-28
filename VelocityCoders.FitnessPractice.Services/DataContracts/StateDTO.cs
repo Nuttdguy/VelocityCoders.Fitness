@@ -13,6 +13,9 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
         public string StateName { get; set; }
 
         [DataMember]
+        public string ShortName { get; set; }
+
+        [DataMember]
         public string StateAbbreviation { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace VelocityCoders.FitnessPractice.Services
         {
             RouteTable.Routes.Add(new ServiceRoute("GymService", new WebScriptServiceHostFactory(), typeof(GymService)));
             RouteTable.Routes.Add(new ServiceRoute("LocationService", new WebScriptServiceHostFactory(), typeof(LocationService)));
+            RouteTable.Routes.Add(new ServiceRoute("StateService", new WebScriptServiceHostFactory(), typeof(StateService)));
         }
 
         protected void Session_Start(object sender, EventArgs e)

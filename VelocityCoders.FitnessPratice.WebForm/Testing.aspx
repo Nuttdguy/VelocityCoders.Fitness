@@ -30,6 +30,20 @@
 
 
 
+		
+		<%--  SAVE STATE ITEM  --%>
+		<label>State Name</label><asp:TextBox runat="server" ID="txtStateName" />
+		<label>State ID:</label><asp:TextBox runat="server" ID="txtStateId" />
+		<asp:Button runat="server" Text="Save State" ID="Button1" OnClick="SaveStateBtn_Click" />
+
+
+<%--		<asp:TextBox runat="server" ID="TextBox2" />--%>
+		<asp:Button Text="Delete State" ID="Button2" OnClick="deleteStateBtn_Click" runat="server" />
+
+
+
+
+
 		<%--  FOR LOCATION COLLECTION  --%>
 <%--		<asp:Repeater runat="server" ID="rptCollection" >
 			<ItemTemplate>
