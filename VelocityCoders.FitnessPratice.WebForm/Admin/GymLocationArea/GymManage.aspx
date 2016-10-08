@@ -63,8 +63,7 @@
 			<tr>
 				<td class="CenterText">
 					<asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="GymButton_Command" CommandName="Edit" />
-					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="GymButton_Command"
-						commandName="Delete" />
+					<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="GymButton_Command"	commandName="Delete" />
 				</td>
 				<td class="CenterText"><%# Eval("GymName") %></td>
 				<td class="CenterText"><%# Eval("GymAbbreviation") %></td>

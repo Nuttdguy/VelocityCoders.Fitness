@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Schedule" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.ScheduleArea.Default" %>
+﻿<%@ Page Title="Schedule" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="ScheduleManage.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.ScheduleArea.Default" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

@@ -5,69 +5,71 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<script src="../../Scripts/ContactInfo.js" type="text/javascript" ></script>
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <asp:HiddenField runat="server" ID="hidInstructorId" Value="0" />
-  <asp:HiddenField runat="server" ID="hidEmailId" Value="0" />
+	<asp:HiddenField runat="server" ID="hidInstructorId" Value="0" />
+	<asp:HiddenField runat="server" ID="hidEmailId" Value="0" />
 
-  <CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
-      <div id="InstructorContainer" class="BorderRadiusBottom" >
-        <CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
-        <div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div>
+	<CustomVelocityCoders:InstructorNavigation runat="server" ID="instructorNavigation"/>
+			<div id="InstructorContainer" class="BorderRadiusBottom" >
+				<CustomVelocityCoders:MessageArea runat="server" ID="CustomMessageArea" Visible="false" />
 
-        <table>
-          <tr>
-            <td><label class="Required">Email Address:</label></td>
-            <td><asp:TextBox runat="server" ID="txtEmailAddress" MaxLength="50" /> </td>
-          </tr>
-          <tr>
-            <td><label class="Required">Email Type:</label></td>
-            <td>
-              <asp:DropDownList runat="server" ID="drpEmailType"  DataTextField="EntityTypeName" DataValueField="EntityTypeId" />
-            </td>
-          </tr>
-        </table>
+				<div class="SectionMessageArea SmallText"><label class="Required">*</label> = Required Field</div>
 
-
-        <div class="ContainerBar">
-          <asp:Button runat="server" Text="Add Email" ID="SaveButton" OnClick="Save_Click" />
-        </div>
+				<table>
+					<tr>
+						<td><label class="Required">Email Address:</label></td>
+						<td><asp:TextBox runat="server" ID="txtEmailAddress" MaxLength="50" CssClass="EmailAddressField" /> </td>
+					</tr>
+					<tr>
+						<td><label class="Required">Email Type:</label></td>
+						<td>
+							<asp:DropDownList runat="server" ID="drpEmailType" DataTextField="EntityTypeName" DataValueField="EntityTypeId"  CssClass="EmailTypeField" />
+						</td>
+					</tr>
+				</table>
 
 
-        <asp:Repeater runat="server" ID="rptEmailList" OnItemDataBound="EmailList_OnItemDataBound" >
-          <HeaderTemplate>
-            <table class="ListStyle BorderRadiusAll">
-              <tr> 
-                <th>&nbsp;</th>
-                <th>Email Address</th>
-                <th>Email Type</th>
-              </tr>
-          </HeaderTemplate>
-          <ItemTemplate>
-            <tr>
-              <td class="CenterText">
-                <asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="EmailButton_Command" CommandName="Edit" />
-                <asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="EmailButton_Command" CommandName="Delete" />
-              </td>
-              <td class="CenterText"><%# Eval("EmailValue") %></td>
-              <td class="CenterText"><%# Eval("EmailType.EntityTypeName") %></td>
-            </tr>
-          </ItemTemplate>
-          <AlternatingItemTemplate>
-            <tr>
-              <td class="ListStyleAlternative CenterText">
-                <asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="EmailButton_Command" CommandName="Edit" />
-                <asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="EmailButton_Command" CommandName="Delete" />
-              </td>
-              <td class="ListStyleAlternative CenterText"><%# Eval("EmailValue") %></td>
-              <td class="ListStyleAlternative CenterText"><%# Eval("EmailType.EntityTypeName") %></td>
-            </tr>
-          </AlternatingItemTemplate>
-          <FooterTemplate>
-            </table>
-          </FooterTemplate>
-        </asp:Repeater>
-      </div>
+				<div class="ContainerBar">
+					<asp:Button runat="server" Text="Add Email" ID="SaveButton" OnClick="Save_Click" OnClientClick="return ValidateClientForm()" />
+				</div>
+
+
+				<asp:Repeater runat="server" ID="rptEmailList" OnItemDataBound="EmailList_OnItemDataBound" >
+					<HeaderTemplate>
+						<table class="ListStyle BorderRadiusAll">
+							<tr> 
+								<th>&nbsp;</th>
+								<th>Email Address</th>
+								<th>Email Type</th>
+							</tr>
+					</HeaderTemplate>
+					<ItemTemplate>
+						<tr>
+							<td class="CenterText">
+								<asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="EmailButton_Command" CommandName="Edit" />
+								<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="EmailButton_Command" CommandName="Delete" />
+							</td>
+							<td class="CenterText"><%# Eval("EmailValue") %></td>
+							<td class="CenterText"><%# Eval("EmailType.EntityTypeName") %></td>
+						</tr>
+					</ItemTemplate>
+					<AlternatingItemTemplate>
+						<tr>
+							<td class="ListStyleAlternative CenterText">
+								<asp:LinkButton runat="server" ID="EditButton" Text="Edit" CssClass="Button ButtonRoundedLeft" OnCommand="EmailButton_Command" CommandName="Edit" />
+								<asp:LinkButton runat="server" ID="DeleteButton" Text="Delete" CssClass="Button ButtonRoundedRight" OnCommand="EmailButton_Command" CommandName="Delete" />
+							</td>
+							<td class="ListStyleAlternative CenterText"><%# Eval("EmailValue") %></td>
+							<td class="ListStyleAlternative CenterText"><%# Eval("EmailType.EntityTypeName") %></td>
+						</tr>
+					</AlternatingItemTemplate>
+					<FooterTemplate>
+						</table>
+					</FooterTemplate>
+				</asp:Repeater>
+			</div>
 </asp:Content>

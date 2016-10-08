@@ -38,6 +38,13 @@ p {
    list-style: none;
  }
 
+ .FormTable td {
+   height: 30px;
+ }
+
+ .LineHeightMid {
+   line-height: 28px;
+ }
 
 
  /*============================================

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Fitness Class" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.FitnessClassArea.Default" %>
+﻿<%@ Page Title="Fitness Class" Theme="Main" Language="C#" MasterPageFile="~/MasterPages/Site2Column.Master" AutoEventWireup="true" CodeBehind="FitnessClassManage.aspx.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.Admin.FitnessClassArea.Default" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

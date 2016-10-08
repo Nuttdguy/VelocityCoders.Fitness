@@ -13,5 +13,6 @@ namespace VelocityCoders.FitnessPractice.DAL
         {
             get { return ConfigurationManager.AppSettings["ConnectionStringName"];  }
         }
+
     }
 }

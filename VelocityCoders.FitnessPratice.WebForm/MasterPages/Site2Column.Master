@@ -1,17 +1,17 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2Column.master.cs" Inherits="VelocityCoders.FitnessPratice.WebForm.MasterPages.Site2Column" %>
 
-<%--VALIDATED AS WORKING AND IS DISPLAYING CORRECTLY--%>
 
 <!DOCTYPE html>
 
 <html>
 
 <head runat="server">
+<%--	<script src="../Scripts/jquery-ui-1.12.1.min.js" type="text/javascript" ></script>
+	<script src="../Scripts/jquery-3.1.1.min.js" type="text/javascript" ></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" />--%>
 
-		<title></title>
-		<asp:ContentPlaceHolder ID="head" runat="server">
-		</asp:ContentPlaceHolder>
-
+	<title></title>
+	<asp:ContentPlaceHolder ID="head" runat="server">	</asp:ContentPlaceHolder>
 </head>
 
 <body>
@@ -40,9 +40,9 @@
 							<ul>
 								<li runat="server" id="Instructor" ><a href="../Instructors/InstructorList.aspx">Instructor</a></li>
 								<li runat="server" id="GymLocation" ><a href="../GymLocationArea/GymManage.aspx">Gym Location</a></li>
-								<li runat="server" id="FitnessClass"><a href="../FitnessClassArea">Fitness Class</a></li>
-								<li runat="server" id="Schedule"><a href="../ScheduleArea">Schedule</a></li>
-								<li runat="server" id="LookupTables"><a href="../LookupTablesArea">Lookup Tables</a></li>
+								<li runat="server" id="FitnessClass"><a href="../FitnessClassArea/FitnessClassManage.aspx">Fitness Class</a></li>
+								<li runat="server" id="Schedule"><a href="../ScheduleArea/ScheduleManage.aspx">Schedule</a></li>
+								<li runat="server" id="LookupTables"><a href="../LookupTablesArea/EntityLookup.aspx">Lookup Tables</a></li>
 							</ul>
 						</div>
 					</div>
