@@ -71,6 +71,40 @@ namespace VelocityCoders.FitnessPractice.DAL
 
         #endregion
 
+        #region ASSOCIATE A FITNESS CLASS TO AN INSTRUCTOR -- IN JOIN/TABLE
+        public static int AddFitnessClass(int instructorId, int fitnessClassId)
+        {
+            int result = 0;
+            QueryExecuteType queryId = QueryExecuteType.InsertItem;
+
+            if (instructorId > 0)
+                queryId = QueryExecuteType.UpdateItem;
+
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteInstructorFitnessClass", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+
+                    myCommand.Parameters.AddWithValue("@QueryId", queryId);
+                    myCommand.Parameters.AddWithValue("@InstructorId", instructorId);
+                    myCommand.Parameters.AddWithValue("@FitnessClassId", fitnessClassId);
+
+                    myCommand.Parameters.Add(HelperDAL.GetReturnParameterInt("ReturnValue"));
+
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+
+                    result = (int)myCommand.Parameters["@ReturnValue"].Value;
+
+                }
+                myConnection.Close();
+            }
+            return result;
+        }
+
+        #endregion
+
         #region GET_ITEM | RETURN ROW RECORD
         public static Instructor GetItem(int instructorId)
         {

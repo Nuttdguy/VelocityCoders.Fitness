@@ -54,7 +54,7 @@
 #ValidationMessageDOB,
 #ValidationMessageDateOfHire,
 #ValidationMessageDateOfTerm {
-  display: inline-block;
+  display: none;
   background-color: #EDEDED;
   border: 1px solid #666;
 

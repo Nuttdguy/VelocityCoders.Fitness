@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace VelocityCoders.FitnessPractice.Services.DataContracts
 {
-    [DataContract]
+    [DataContract(Name = "LocationDTO")]
     public class LocationDTO
     {
         [DataMember]

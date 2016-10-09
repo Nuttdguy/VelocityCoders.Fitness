@@ -12,6 +12,11 @@
 		<asp:TextBox runat="server" ID="txtGymId" />
 		<asp:Button Text="Delete" ID="DeleteBtn" OnClick="deleteBtn_Click" runat="server" />--%>
 
+		<label>Fitness ID</label><asp:TextBox runat="server" ID="txtfitnessId" />
+		<label>Instructor ID:</label><asp:TextBox runat="server" ID="txtInstructorId" />
+		<asp:Button runat="server" Text="Save Class" ID="FitnessBtn" OnClick="SaveFitnessBtn_Click" />
+
+
 
 		<%--  GET LOCATION ITEM  --%>
 <%--		<asp:TextBox runat="server" ID="txtLocationId" />
@@ -45,11 +50,13 @@
 
 
 		<%--  FOR LOCATION COLLECTION  --%>
-<%--		<asp:Repeater runat="server" ID="rptCollection" >
+		<asp:Repeater runat="server" ID="rptCollection" >
 			<ItemTemplate>
-				<p><%# Eval("LocationId") %>  || <%# Eval("LocationName") %></p>
+				<p><%# Eval("FitnessClassId") %></p>
+				<p><%# Eval("FitnessClassName") %></p>
+				<p><%# Eval("Description") %></p>
 			</ItemTemplate>
-		</asp:Repeater>--%>
+		</asp:Repeater>
 
 
 <%--		<asp:Repeater runat="server" ID="rptCollection" >

@@ -22,4 +22,10 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
 
     [CollectionDataContract(Name = "StateDTOCollection")]
     public class StateDTOCollection : Collection<StateDTO> { };
+
+    [CollectionDataContract(Name = "FitnessClassDTOCollection")]
+    public class FitnessClassDTOCollection : Collection<FitnessClassDTO> { };
+
+    [CollectionDataContract(Name = "InstructorDTOCollection")]
+    public class InstructorDTOCollection : Collection<InstructorDTO> { };
 }

@@ -102,6 +102,7 @@
     <Content Include="Admin\Instructors\ContactInfo.aspx" />
     <Content Include="Admin\Instructors\InstructorCollection.aspx" />
     <Content Include="Admin\Instructors\InstructorDetail.aspx" />
+    <Content Include="Admin\Instructors\InstructorFitnessClassAdmin.aspx" />
     <Content Include="Admin\Instructors\InstructorForm.aspx" />
     <Content Include="Admin\Instructors\InstructorList.aspx" />
     <Content Include="Admin\LookupTablesArea\EntityLookup.aspx" />
@@ -163,6 +164,8 @@
     <Content Include="App_Themes\Main\Main.css" />
     <Content Include="MasterPages\Site2Column.Master" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\CrossDomain.js" />
+    <Content Include="Scripts\FitnessClassAdmin.js" />
     <Content Include="Scripts\InstructorForm.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -343,6 +346,13 @@
     </Compile>
     <Compile Include="Admin\Instructors\InstructorDetail.aspx.designer.cs">
       <DependentUpon>InstructorDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorFitnessClassAdmin.aspx.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Instructors\InstructorFitnessClassAdmin.aspx.designer.cs">
+      <DependentUpon>InstructorFitnessClassAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Instructors\InstructorForm.aspx.cs">
       <DependentUpon>InstructorForm.aspx</DependentUpon>

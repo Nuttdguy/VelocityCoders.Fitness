@@ -39,14 +39,21 @@ namespace VelocityCoders.FitnessPractice.BLL
             return InstructorDAL.Save(instructorToSave);
         }
 
+        #endregion
+
+        #region ASSOCIATE A FITNESS CLASS AND INSTRUCTOR
+        public static int AddFitnessClass(int instructorId, int fitnessClassId)
+        {
+            int recordId = InstructorDAL.AddFitnessClass(instructorId, fitnessClassId);
+            return recordId;
+        }
+        #endregion
+
         //== UPDATE 
         public static int SaveEmail(int instructorId, EmailAddress emailToSave)
         {
             return EmailAddressManager.Save(instructorId, emailToSave);
         }
-
-        #endregion
-
 
 
         #region PRIVATE METHOD | CREATE A NEW INSTANCE OF 

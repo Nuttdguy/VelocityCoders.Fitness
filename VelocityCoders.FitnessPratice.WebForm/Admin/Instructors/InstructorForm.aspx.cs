@@ -210,11 +210,11 @@ namespace VelocityCoders.FitnessPratice.WebForm.Admin.Instructors
 
             //== validate dates if user entered in data ==\\
 
-            if (!string.IsNullOrEmpty(txtBirthDate.Text.Trim()))
+            if (string.IsNullOrEmpty(txtBirthDate.Text.Trim()))
                 brokenRules.Add("Date of Birth", "Please enter a valid date.");
-            if (!string.IsNullOrEmpty(txtHireDate.Text.Trim()))
+            if (string.IsNullOrEmpty(txtHireDate.Text.Trim()))
                 brokenRules.Add("Date of Hire", "Please enter a valid date.");
-            if (!string.IsNullOrEmpty(txtTermDate.Text.Trim()))
+            if (string.IsNullOrEmpty(txtTermDate.Text.Trim()))
                 brokenRules.Add("Date of Termination", "Please enter a valid date.");
 
             //== check if broken rules collection has any items

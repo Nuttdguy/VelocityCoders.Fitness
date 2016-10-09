@@ -31,7 +31,7 @@ namespace VelocityCoders.FitnessPractice.Models
         /// <summary>
         /// Page contains the association between Instructor and Fitness class
         /// </summary>
-        FitnessClass,
+        Instructor_Fitness_Class_Admin,
 
         /// <summary>
         /// Page contains the association between Instructor and Location

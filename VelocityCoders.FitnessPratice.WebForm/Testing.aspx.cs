@@ -14,14 +14,25 @@ namespace VelocityCoders.FitnessPratice.WebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //GymCollection gymCollection = new GymCollection();
+            FitnessClassCollectionList gymCollection = new FitnessClassCollectionList();
 
-            //gymCollection = GymManager.GetCollection();
+            gymCollection = FitnessClassManager.GetFitnessClassCollection(1);
 
-            //rptCollection.DataSource = gymCollection;
-            //rptCollection.DataBind();
+            rptCollection.DataSource = gymCollection;
+            rptCollection.DataBind();
             //repeaterControl();
-            
+
+
+        }
+
+
+        protected void SaveFitnessBtn_Click(object sender, EventArgs e)
+        {
+            int id = txtfitnessId.Text.ToInt();
+            int instructId = txtInstructorId.Text.ToInt();
+            int tmpItem = InstructorManager.AddFitnessClass(instructId, id);
+
+            //lblLocationName.Text = tmpItem.LocationName;
 
         }
 

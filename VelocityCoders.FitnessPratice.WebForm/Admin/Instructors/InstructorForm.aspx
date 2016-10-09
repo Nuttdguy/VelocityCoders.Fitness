@@ -5,10 +5,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-	<script type="text/javascript" src="../../Scripts/jquery-3.1.1.min.js" ></script>
-	<script type="text/javascript" src="../../Scripts/jquery-ui-1.12.1.js" ></script>
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" />
-	<script type="text/javascript" src="../../Scripts/InstructorForm.js" ></script>
+	<script type="text/javascript" src="/Scripts/InstructorForm.js" ></script>
 
 </asp:Content>
 

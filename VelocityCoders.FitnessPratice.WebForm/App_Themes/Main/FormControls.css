@@ -51,3 +51,29 @@ input[type="submit"] {
 .ButtonRoundedRight {
   border-radius: 0px 5px 5px 0px;
 }
+
+.ui-icon-gear {
+  height: 18px!important;
+  width: 18px!important;
+  background-position: -192px -110px!important;
+  display: inline-block!important;
+}
+
+.ui-button {
+  vertical-align: top;
+  width: 88px;
+  height: 24px;
+}
+
+.ui-widget {
+  font-size: 12px !important;
+  text-transform: uppercase;
+}
+
+#FitnessClassPopupForm {
+  display: none;
+}
+
+#MessageArea {
+  display: none;
+}

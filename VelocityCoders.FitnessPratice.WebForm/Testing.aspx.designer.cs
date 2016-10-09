@@ -13,6 +13,33 @@ namespace VelocityCoders.FitnessPratice.WebForm {
     public partial class Testing {
         
         /// <summary>
+        /// txtfitnessId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtfitnessId;
+        
+        /// <summary>
+        /// txtInstructorId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtInstructorId;
+        
+        /// <summary>
+        /// FitnessBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FitnessBtn;
+        
+        /// <summary>
         /// txtLocationName control.
         /// </summary>
         /// <remarks>
@@ -83,5 +110,14 @@ namespace VelocityCoders.FitnessPratice.WebForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// rptCollection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptCollection;
     }
 }

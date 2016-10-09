@@ -24,8 +24,44 @@ namespace VelocityCoders.FitnessPractice.BLL
             return myCollection;
         }
 
+        public static FitnessClassCollectionList GetFitnessClassCollection(int instructId)
+        {
+            FitnessClassCollectionList myCollection = FitnessClassDAL.GetCollectionbyId(instructId);
+            return myCollection;
+        }
+
         #endregion
 
+        #region SECTION 3 ||=======  SAVE OR UPDATE ITEM  =======||  
+        public static int SaveItem(FitnessClass fcItem)
+        {
+            int recordId = FitnessClassDAL.SaveItem(fcItem);
+            return recordId;
+        }
+
+
+        #endregion
+
+
+        #region SECTION 4 ||=======  DELETE ITEM  =======||
+        public static int DeleteItem(int fcId)
+        {
+            int recordId = FitnessClassDAL.DeleteItem(fcId);
+            return recordId;
+        }
+
+
+        #endregion
+
+        #region SECTION 5 ||=======  ADD FITNESS CLASS  =======||  
+        public static int AddFitnessClass(FitnessClass fcItem)
+        {
+            int recordId = FitnessClassDAL.SaveItem(fcItem);
+            return recordId;
+        }
+
+
+        #endregion
 
     }
 }

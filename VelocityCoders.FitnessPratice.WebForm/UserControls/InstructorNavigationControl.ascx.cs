@@ -48,7 +48,9 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
                 {
                     if (item != InstructorNavigation.None)
                     {
-                        string displayValue = item.ToString();
+                        string removeAdmin = item.ToString().Replace("_Admin", "");
+                        string displayValue = removeAdmin.Replace("_", " ");
+                        string urlValue = item.ToString().Replace("_", "");
 
                         if (item == CurrentNavigationLink)
                         {
@@ -57,7 +59,7 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
                         else
                             navigationList.Add(new ListItem {
                                 Text = displayValue,
-                                Value = "~/Admin/Instructors/" + item.ToString() + ".aspx?" + instructorIdQueryString,
+                                Value = "~/Admin/Instructors/" + urlValue + ".aspx?" + instructorIdQueryString,
                                 Enabled = true
                             });
                     }
@@ -70,12 +72,32 @@ namespace VelocityCoders.FitnessPratice.WebForm.UserControls
                 {
                     if (item != InstructorNavigation.None)
                     {
-                        navigationList.Add(new ListItem
+                        string removeAdmin = item.ToString().Replace("_Admin", "");
+                        string displayValue = removeAdmin.Replace("_", " ");
+                        string urlValue = item.ToString().Replace("_", "");
+
+                        switch (item)
                         {
-                            Text = item.ToString(),
-                            Value = "~/Admin/Instructors/" + item.ToString() + ".aspx?" + instructorIdQueryString,
-                            Enabled = false
-                        });
+                            case InstructorNavigation.InstructorList:
+                            case InstructorNavigation.InstructorForm:
+                                navigationList.Add(new ListItem
+                                {
+                                    Text = displayValue,
+                                    Value = "~/Admin/Instructors/" + urlValue + ".aspx",
+                                    Enabled = true
+                                });
+                                break;
+
+                            default:
+                                navigationList.Add(new ListItem
+                                {
+                                    Text = displayValue,
+                                    Value = "~/Admin/Instructors/" + urlValue + ".aspx?" + instructorIdQueryString,
+                                    Enabled = true
+                                });
+                                break;
+                        }
+
                     }
                 }
             }
