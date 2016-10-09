@@ -52,7 +52,8 @@ input[type="submit"] {
   border-radius: 0px 5px 5px 0px;
 }
 
-.ui-icon-gear {
+.ui-icon-gear,
+.ui-icon-trash {
   height: 18px!important;
   width: 18px!important;
   background-position: -192px -110px!important;
@@ -61,7 +62,7 @@ input[type="submit"] {
 
 .ui-button {
   vertical-align: top;
-  width: 88px;
+  width: 98px;
   height: 24px;
 }
 

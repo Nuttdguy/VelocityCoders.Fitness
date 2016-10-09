@@ -16,8 +16,8 @@ namespace VelocityCoders.FitnessPractice.Services.DataContracts
         [DataMember]
         public string Description { get; set; }
 
-        //[DataMember]
-        //public int InstructorFitnessClassId { get; set; }
+        [DataMember]
+        public int InstructorFitnessClassId { get; set; }
 
     }
 }

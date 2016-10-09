@@ -108,8 +108,8 @@ namespace VelocityCoders.FitnessPractice.DAL
             int recordId = 0;
             QueryExecuteType query = QueryExecuteType.InsertItem;
 
-            if (fcItem.FitnessClassId > 0)
-                query = QueryExecuteType.UpdateItem;
+            //if (fcItem.FitnessClassId > 0)
+            //    query = QueryExecuteType.UpdateItem;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
@@ -173,6 +173,9 @@ namespace VelocityCoders.FitnessPractice.DAL
                 myObject.FitnessClassName = myDataRecord.GetString(myDataRecord.GetOrdinal("FitnessClassName"));
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Description")))
                 myObject.Description = myDataRecord.GetString(myDataRecord.GetOrdinal("Description"));
+
+            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("InstructorFitnessClassId")))
+            //    myObject.InstructorFitnessClassId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("InstructorFitnessClassId"));
 
             //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("FirstName")))
             //    myObject.FirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("FirstName"));

@@ -21,6 +21,7 @@ $(document).ready(function (e) {
     //==|| POPULATE DROP-DOWN ||==\\
     PopulateFitnessClassDropDown();
 
+
     //==|| DISPLAY LIST OF FITNESS CLASSES  ||==\\
     DisplayFitnessClassList();
 
@@ -54,7 +55,6 @@ function PopulateFitnessClassDropDown() {
     })
 
 }
-
 
 
 //==||  DISPLAYS ERROR MESSAGE  ||==\\
@@ -123,6 +123,13 @@ function ValidateClientForm() {
 
             DisplayMessage(true, "Fitness Class associated successfully.", true);
 
+            //==|| CALL FUNCTION TO APPEND A RECORD TO THE TABLE  ||==\\
+            AddToDisplayTable(data, dropDown.children(':selected').text());
+
+            //==||  SET THE UI DISPLAY AND EVENT HANDLER FOR THE DELETE BUTTON  ||==\\
+
+            SetDeleteButtonProperties();
+
         }).fail(function (jqXHR, textStatus) {
             DisplayMessage(true, "There was an error with your submission.", true);
         })
@@ -159,4 +166,34 @@ function DisplayFitnessClassList() {
     }).always(function () {
         //==|| finally block
     })
+}
+
+
+//==||  UTILIZE TO APPEND TABLE ROW FOR EACH ITEM ITERATION  ||==\\
+
+function AddToDisplayTable(instructorFitnessClassId, fitnessClassName) {
+    var table = $('#FitnessClassTable');
+
+    table.append('<tr><td class="CenterText"> <button class="DeleteButton" value="' + instructorFitnessClassId + '"></button></td><td>"'+ fitnessClassName + '"</td></tr>"');
+}
+
+//==||  SET UI STYLE FOR BUTTON AND JQUERY CLICK-HANDLER EVENT  ||==\\
+
+function SetDeleteButtonProperties() {
+
+    $('.DeleteButton').button({
+        classes: {
+            "ui-button": "ui-corner-all"
+        },
+        icons: {
+            primary: "ui-icon-trash"
+        }
+    });
+
+    $('.DeleteButton').click(function (e) {
+        var instructorFitnessClassId = $(this).val();
+
+        e.preventDefault();
+    });
+
 }
