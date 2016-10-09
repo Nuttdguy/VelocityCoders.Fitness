@@ -30,6 +30,16 @@ namespace VelocityCoders.FitnessPractice.BLL
 
         #endregion
 
+        #region DELETE INSTRUCTOR ASSOCIATION TO A FITNESS CLASS
+        public static bool DeleteFitnessClass(int instructorFitnessClassId)
+        {
+            bool returnValue = InstructorDAL.DeleteFitnessClass(instructorFitnessClassId);
+            return returnValue;
+        }
+
+
+        #endregion
+
         #region INSERT/UPDATE RECORD | RETURN INT VALUE OF AFFECTED RECORD
         public static int Save(Instructor instructorToSave)
         {
@@ -49,7 +59,7 @@ namespace VelocityCoders.FitnessPractice.BLL
         }
         #endregion
 
-        //== UPDATE 
+                //== UPDATE 
         public static int SaveEmail(int instructorId, EmailAddress emailToSave)
         {
             return EmailAddressManager.Save(instructorId, emailToSave);

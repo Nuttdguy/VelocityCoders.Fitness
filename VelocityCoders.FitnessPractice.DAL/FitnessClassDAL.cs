@@ -174,15 +174,8 @@ namespace VelocityCoders.FitnessPractice.DAL
             if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("Description")))
                 myObject.Description = myDataRecord.GetString(myDataRecord.GetOrdinal("Description"));
 
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("InstructorFitnessClassId")))
-            //    myObject.InstructorFitnessClassId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("InstructorFitnessClassId"));
-
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("FirstName")))
-            //    myObject.FirstName = myDataRecord.GetString(myDataRecord.GetOrdinal("FirstName"));
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("LastName")))
-            //    myObject.LastName = myDataRecord.GetString(myDataRecord.GetOrdinal("LastName"));
-            //if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("InstructorId")))
-            //    myObject.InstructorId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("InstructorId"));
+            if (!myDataRecord.IsDBNull(myDataRecord.GetOrdinal("InstructorFitnessClassId")))
+                myObject.InstructorFitnessClassId = myDataRecord.GetInt32(myDataRecord.GetOrdinal("InstructorFitnessClassId"));
 
 
             return myObject;

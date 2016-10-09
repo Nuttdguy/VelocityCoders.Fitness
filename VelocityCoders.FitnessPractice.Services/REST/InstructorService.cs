@@ -31,6 +31,13 @@ namespace VelocityCoders.FitnessPractice.Services.REST
 
         #endregion
 
+        #region SECTION 3 ||=======  DELETE ASSOCIATION BETWEEN INSTRUCTOR AND FITNESS CLASS
+        public bool DeleteFitnessClass(string instructorFitnessClassId)
+        {
+            return InstructorManager.DeleteFitnessClass(instructorFitnessClassId.ToInt());
+        }
+        #endregion
+
 
         #region SECTION 3 ||=======  HYDRATE DTO/ITEM  =======||
         private InstructorDTO itemToDto(Instructor instructItem)

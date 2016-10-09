@@ -30,6 +30,28 @@ namespace VelocityCoders.FitnessPractice.DAL
 
         #endregion
 
+        #region DELETE INSTRUCTOR ASSOCIATION TO FITNESS CLASS
+        public static bool DeleteFitnessClass(int instructorId)
+        {
+            int result = 0;
+            using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
+            {
+                using (SqlCommand myCommand = new SqlCommand("usp_ExecuteInstructorFitnessClass", myConnection))
+                {
+                    myCommand.CommandType = CommandType.StoredProcedure;
+                    myCommand.Parameters.AddWithValue("@QueryId", QueryExecuteType.DeleteItem);
+                    myCommand.Parameters.AddWithValue("@InstructorFitnessClassId", instructorId);
+
+                    myConnection.Open();
+                    result = myCommand.ExecuteNonQuery();
+                }
+                myConnection.Close();
+            }
+            return result > 0;
+        }
+
+        #endregion
+
         #region INSERT AND/OR UPDATE RECORD | RETURN INT VALUE OF AFFECTED RECORD
         public static int Save(Instructor instructorToSave)
         {

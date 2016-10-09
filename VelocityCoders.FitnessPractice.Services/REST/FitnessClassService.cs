@@ -68,7 +68,8 @@ namespace VelocityCoders.FitnessPractice.Services.REST
             {
                 FitnessClassId = dtoFitnessClass.FitnessClassId,
                 FitnessClassName = dtoFitnessClass.FitnessClassName,
-                Description = dtoFitnessClass.Description
+                Description = dtoFitnessClass.Description,
+                InstructorFitnessClassId = dtoFitnessClass.InstructorFitnessClassId
             };
 
             return tmpItem;
@@ -83,7 +84,8 @@ namespace VelocityCoders.FitnessPractice.Services.REST
             {
                 FitnessClassId = itemToDto.FitnessClassId,
                 FitnessClassName = itemToDto.FitnessClassName,
-                Description = itemToDto.Description
+                Description = itemToDto.Description,
+                InstructorFitnessClassId = itemToDto.InstructorFitnessClassId
             };
             return tmpDtoItem;
         }

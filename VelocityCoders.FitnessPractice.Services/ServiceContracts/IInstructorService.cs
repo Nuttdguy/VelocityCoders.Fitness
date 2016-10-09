@@ -23,5 +23,10 @@ namespace VelocityCoders.FitnessPractice.Services.ServiceContracts
         [WebInvoke(UriTemplate = "/Detail/{instructorId}", Method = "PUT", RequestFormat = WebMessageFormat.Json)]
         int AddFitnessClass(string instructorId, string fitnessClassId);
 
+        [Description("Delete association between instructor and fitness class.")]
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/Detail/{instructorFitnessClassId}", Method = "DELETE", RequestFormat = WebMessageFormat.Json)]
+        bool DeleteFitnessClass(string instructorFitnessClassId);
+
     }
 }

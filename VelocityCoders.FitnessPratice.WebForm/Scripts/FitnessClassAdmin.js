@@ -162,7 +162,7 @@ function DisplayFitnessClassList() {
         dataType: "json"
     }).done(function (data) {
         for (var x = 0; x < data.length; x++) {
-            AddToDisplayTable(data[x].instructorFitnessClassId, data[x].FitnessClassName);
+            AddToDisplayTable(data[x].InstructorFitnessClassId, data[x].FitnessClassName);
         }
 
         SetDeleteButtonProperties();
@@ -181,7 +181,7 @@ function DisplayFitnessClassList() {
 function AddToDisplayTable(instructorFitnessClassId, fitnessClassName) {
     var table = $('#FitnessClassTable');
 
-    table.append('<tr><td class="CenterText"> <button class="DeleteButton" value="' + instructorFitnessClassId + '"></button></td><td>"'+ fitnessClassName + '"</td></tr>"');
+    table.append('<tr><td class="CenterText"> <button class="DeleteButton" value="' + instructorFitnessClassId + '"></button></td><td>' + fitnessClassName + '</td></tr>');
 }
 
 //==||  SET UI STYLE FOR BUTTON AND JQUERY CLICK-HANDLER EVENT  ||==\\
@@ -199,8 +199,41 @@ function SetDeleteButtonProperties() {
 
     $('.DeleteButton').click(function (e) {
         var instructorFitnessClassId = $(this).val();
+        var trElement = $(this).closest('tr');
+
+        //==||  CALL TO WEB-SERVICE TO DELETE ASSOCIATED RECORD  ||==\\
+        DeleteInstructorFitnessClass(instructorFitnessClassId, trElement);
 
         e.preventDefault();
     });
 
 }
+
+
+//==||  DELETE INSTRUCTOR FITNESS CLASS  ||==\\
+
+function DeleteInstructorFitnessClass(instructorFitnessClassId, trElement) {
+
+    if (instructorFitnessClassId > 0) {
+        if (confirm("Are you sure you want to Delete this Fitness Class?")) {
+            $.ajax({
+                type: "DELETE",
+                url: _serviceBaseUrl + "/InstructorService/Detail/" + instructorFitnessClassId,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: '"' + instructorFitnessClassId + '"'
+
+            }).done(function (data) {
+                trElement.fadeOut();
+
+            }).fail(function (jqXHR, textStatus) {
+                DisplayMessage(true, "Fitness Class deletion failed.", true, true);
+
+            });
+        }
+    }
+    else
+        DisplayMessage(true, "Deletion of Fitness Class Failed. Invalid Id: " + instructorFitnessClassId, true, true);
+}
+
+
