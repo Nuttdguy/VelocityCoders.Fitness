@@ -58,8 +58,14 @@ function PopulateFitnessClassDropDown() {
 
 
 //==||  DISPLAYS ERROR MESSAGE  ||==\\
-function DisplayMessage(showMessage, message, showButton) {
+function DisplayMessage(showMessage, message, showButton, clearCurrentMessages) {
     if (showMessage) {
+
+        //==||  CLEAR ANY CURRENT MESSAGES  ||==\\
+        if (clearCurrentMessages)
+            $('#MessageAreaList').empty();
+
+
         $('#MessageArea').show();
 
         $('#MessageAreaList').append('<li>' + message + '</li>');
@@ -120,14 +126,15 @@ function ValidateClientForm() {
             dataType: "json",
             data: '"'+ fitnessClassId + '"'
         }).done(function (data) {
+            var fitnessClassName = dropDown.children(':selected').text();
 
-            DisplayMessage(true, "Fitness Class associated successfully.", true);
+            //==||  SUCCESS - DISPLAY MESSAGE  ||==\\
+            DisplayMessage(true, "Fitness Class " + fitnessClassName + " associated successfully.", true, true);
 
             //==|| CALL FUNCTION TO APPEND A RECORD TO THE TABLE  ||==\\
-            AddToDisplayTable(data, dropDown.children(':selected').text());
+            AddToDisplayTable(data, fitnessClassName);
 
             //==||  SET THE UI DISPLAY AND EVENT HANDLER FOR THE DELETE BUTTON  ||==\\
-
             SetDeleteButtonProperties();
 
         }).fail(function (jqXHR, textStatus) {

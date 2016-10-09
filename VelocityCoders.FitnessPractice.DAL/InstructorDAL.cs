@@ -77,8 +77,8 @@ namespace VelocityCoders.FitnessPractice.DAL
             int result = 0;
             QueryExecuteType queryId = QueryExecuteType.InsertItem;
 
-            if (instructorId > 0)
-                queryId = QueryExecuteType.UpdateItem;
+            //if (instructorId > 0)
+            //    queryId = QueryExecuteType.UpdateItem;
 
             using (SqlConnection myConnection = new SqlConnection(AppConfiguration.ConnectionString))
             {
